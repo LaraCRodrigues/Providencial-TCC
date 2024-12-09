@@ -1,0 +1,201 @@
+
+body {
+    background-color: #DFDFDF;
+    
+}
+/* configuracao padrao */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+li {
+    list-style: none;
+    align-items: center;
+}
+
+ul {
+    align-items: center
+}
+i{
+    color: #007bff;
+}
+
+/* icones bootstrap */
+.bi{
+    color: white;
+}
+.bi-box{
+    color: #007bff;
+}
+
+
+.bi-archive-fill{
+    color: #007bff;
+}
+
+.subtitulos-produtos-apresentacao{
+    color: #007bff;
+}
+
+.links-categoria {
+    text-decoration: none;
+    margin: 0px 30px;
+    color: #FFFFFF;
+}
+
+.separar-elementos {
+    display: flex;
+        flex-direction: column;
+    }
+
+.flex-hrcategorias {
+    display: flex;
+    margin: 10px;
+    gap: 10px;
+    align-items: center;
+
+}
+
+hr {
+    height: 40px;
+}
+
+.flex-links-cat {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.center-links {
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+/* pre colocados  */
+.subtitulos-produtos-apresentacao {
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+}
+
+.produtos-sessao{
+    margin-top: 10%;
+}
+/* Estilo dos cards */
+/* Container Principal */
+.card {
+    width: 250px; /* Define a largura fixa do card */
+    height: 400px; /* Define a altura fixa do card */
+    display: flex; /* Garante que o conteúdo seja bem organizado */
+    flex-direction: column; /* Organiza os itens verticalmente */
+    justify-content: space-between; /* Distribui os itens ao longo do espaço vertical */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    padding: 15px; /* Espaço interno */
+    border: 1px solid #ccc; /* Adiciona uma borda */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    overflow: hidden; /* Garante que o conteúdo não transborde */
+    text-align: center; /* Centraliza o texto */
+    background-color: #fff; /* Fundo branco */
+}
+
+.produto-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    margin: 0 auto;
+    padding: 20px;
+    gap: 10px;
+}
+
+.container-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagem do produto */
+.produto-img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Conteúdo interno dos cards */
+.separar-elementos {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Marca e título */
+.marca a {
+    font-size: 14px;
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.marca a:hover {
+    color: #ff5733;
+}
+
+.separar-elementos p {
+    font-size: 14px;
+    color: #333;
+    margin: 8px 0;
+}
+
+/* Preço */
+.preco {
+    font-size: 18px;
+    color: #27ae60;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.preco sup {
+    font-size: 12px;
+    vertical-align: top;
+}
+
+/* Parcelas */
+.parcelas {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Botão de conferir */
+.btn-conferir {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-conferir:hover {
+    background-color: #c44125;
+}
+
+.btn-conferir a {
+    color: #fff;
+    text-decoration: none;
+}

@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+:root {
+    --cor-palleta-claro-base: #ffdf35 ;
+    --cor--palleta-amarelo-forte: #ffd706;
+    --cor-botoes-conferir:#ff6600;
+    --cor-secundaria: #2ecc71;
+    --cor-texto-elementos: #357EBD;
+    --cor-fundo-site-padrao: #FFFFFF;
+  }
+
+/* Estilização do rodapé principal */
+#rodape {
+    background-color: #00529B;
+    padding: 40px 20px;
+    
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navegacao h4,
+.redes-sociais h4,
+.footer-links ul {
+    margin-bottom: 10px;
+    color: white;
+}
+
+
+/* Estilização das redes sociais */
+.redes-sociaisa {
+    color: white;
+    margin-right: 15px;
+    font-size: 24px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.texto-container h3 h5 {
+    color: white;
+}
+
+.informacao-rodape {
+    color: #333;
+}
+
+
+
+/* Rodape site */
+.rodape-informativo {
+    margin-top: 100px;
+}
+.rodape-informativo {
+    background-color: var(--cor--palleta-amarelo-forte);
+    border: 1px solid white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.aligm-texto {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.texto-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.informacao-horario h3,
+.informacao-horario h5 {
+    color: white;
+    margin: 0;
+}
+
+.bi {
+    font-size: 24px;
+}

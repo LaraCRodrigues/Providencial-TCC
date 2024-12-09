@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- links de css -->
+    <link rel="stylesheet" href="Css/MediaQueries.css">
+    <link rel="stylesheet" href="Css/PrincipalPart.css">
+    <link rel="stylesheet" href="Css/Principalstyle.css">
+      
+    <!-- botao mobile -->
+    <link rel="stylesheet" href="Css/Componentes/botaomobilepesquisa.css">
+    <!-- componentes -->
+     <link rel="stylesheet" href="Css/Componentes/Paginacomplemtares.css">
+    <link rel="stylesheet" href="Css/Componentes/carrinho.css">
+    <link rel="stylesheet" href="Css/Componentes/CarroselPEX.css">
+    <link rel="stylesheet" href="Css/Componentes/CarrosselPropagandas.css">
+    <link rel="stylesheet" href="Css/Componentes/CarroselComprarP.css">
+     <link rel="stylesheet" href="Css/Componentes/Footersite.css">
+    <link rel="stylesheet" href="Css/Componentes/navbar.css">
+    <link rel="stylesheet" href="Css/Componentes/chatLoja.css">
+    <link rel="stylesheet" href="Css/Componentes/barraPesquisa.css">
+    <!-- icones -->
+     <link rel="stylesheet" href="Css/Icones/iconesSite.css">
+    <!-- boot -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="Imagens/Favicons/1.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <title>Providencial - Casa de Materiais de Construção</title>
+</head>
+
+<body>
+    <!-- cabeçalho inicio navbars -->
+    <header id="cabecalho">
+        
+        
+
+        <nav id="navbar2">
+            <div class="container-2navbar">
+                <a href="PgPrincipal.html">
+                    <img src="Imagens/Logos Providencial/Providencial logo 2.png" alt="logo">
+                </a>
+                <div class="buscar-box">
+                    <div class="lupa-buscar">
+
+                        <i class="bi bi-search"></i>
+
+                    </div>
+
+                    <div class="input-buscar">
+
+
+                        <input class="pes" placeholder="Digite Aqui...." type="text">
+
+                    </div>
+
+                    <div class="btn-fechar">
+                        <i class="bi bi-x-circle"></i>
+                    </div>
+                </div>
+                <div class="aba-pesquisa-itens">
+
+                    <div class="barra-pesquisa-produtos">
+                        <input type="text" id="pesquisa-input" placeholder="Digite o nome do produto...">
+                        <button class="botao-buscar-produtos" onclick="pesquisarProduto()"><i
+                                class="bi bi-search"></i></button>
+                    </div>
+                </div>
+                <!-- Botão de Acessibilidade -->
+                <button id="btn-acessibilidade" onclick="toggleBalao()">     
+                    <i class="bi bi-universal-access-circle"></i>
+                   </button>
+   
+                   <div class="balao-acessibilidade" id="balaoAcessibilidade">
+                       <button class="fechar-balao" id="btnFecharBalao">&times;</button>
+                       <h4>Opções de Acessibilidade</h4>
+                       <div class="bloco-links-acessibilidade">
+                           <a href="#" id="link-fonte-grande">Fonte Grande</a>
+                           <a href="#" id="link-alto-contraste">Alto Contraste</a>
+                           <a href="#" id="link-texto-negrito">Texto em Negrito</a>
+                       </div>
+                   </div>
+                   
+                   <div class="sidebar-carrinho" id="carrinhoSidebar">
+                    <button id="botaoFecharSidebar" onclick="fecharCarrinho()" title="Fechar">
+                        <i class="bi bi-x"></i>
+                    </button>
+                    <h2>Carrinho de Compras</h2>
+                    <ul id="itensCarrinho">
+                        <!-- Os itens do carrinho serão adicionados aqui dinamicamente -->
+                    </ul>
+                    <div class="subtotal">
+                        <p>Subtotal: <span id="subtotalValor">R$ 0,00</span></p>
+                    </div>
+                    <button id="finalizarCompra"><a href="PgPagamento.html">Finalizar Compra</a> </button>
+                </div>
+                <div class="icons-2navbar">
+                    <i class="bi bi-cart" id="abrirCarrinho" title="Carrinho" onclick="abrirCarrinho()"></i>
+                </div>
+            </div>
+        </nav>
+
+        <nav id="navbar3">
+            <div class="flex-links-cat">
+
+                <!-- Botão para abrir a barra lateral -->
+                <div class="flex-hrcategorias">
+                    <div class="menu-h" id="btn-categorias">
+                        <i class="bi bi-list"></i>
+
+                        <a class="links-categoria" href="#">
+                            Categorias
+                        </a>
+                    </div>
+                    <hr class="separator">
+                </div>
+
+             <!-- Barra lateral de categorias -->
+             <div id="barra-lateral-categorias" class="barra-lateral-categorias">
+                  
+                <ul class="links-categorias-inter">
+                    <li><a href="PgPrincipal.html">Início</a></li>
+                    <li><a href="PgContato.html">Contato</a></li>
+                    <li>
+                        <a href="#" onclick="toggleSubcategorias(event)"><i class="bi bi-person-fill"></i> Minha conta</a>
+                        <ul class="subcategorias">
+                            <li><a href="#">Meus pedidos</a></li>
+                            <li><a href="PgFavoritos.html">Favoritos</a></li>
+                            <li><a href="PgAjuda.html">Ajuda</a></li>
+                        </ul>
+                    </li>
+                 
+                    <li>
+                        <a href="#" onclick="toggleSubcategorias(event)">Selecionar Categorias <i
+                                class="bi bi-caret-down"></i></a>
+                        <ul class="subcategorias">
+                            <li><a href="PgFerramentas.html"><i class="bi bi-gear-fill"></i>Ferramentas</a></li>
+                            <li><a href="PgPintura.html"><i class="bi bi-palette-fill"></i>Pintura</a></li>
+                            <li><a href="PgConstrucao.html"><i class="bi bi-bricks"></i>Construção</a></li>
+                            <li><a href="PgEletrica.html"><i class="bi bi-plug-fill"></i>Eletrica</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+                <div class="center-links">
+
+                    <ul class="menu-hamburguer-elements">
+                        <li class="gap-links">
+                            <a class="links-categoria" href="PgPrincipal.html">Inicio</a>
+                            <a class="links-categoria" href="PgAjuda.html">Ajuda</a>
+                            <a class="links-categoria" href="PgProdutos.html">Loja</a>
+                            <a class="links-categoria" href="#">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <button class="btn-cadastrar-login">
+                    <i class="bi bi-person-fill"></i><a class="conta" href="PgLogin.html">Fazer Login</a>
+                </button>
+            </div>
+        </nav>
+    </header> <!-- fechamento navbar  -->
+
+    <!-- sessao do carrosel de imagens - propagandas -->
+    <section id="section2">
+        <div class="container-propagandas">
+            <div class="carrossel">
+                <div class="slide"><img src="Imagens/BD imagens/propaganda 1.jpg" alt="Imagem 1"></div>
+                <div class="slide"><img src="Imagens/BD imagens/propaganda 2.jpg" alt="Imagem 2"></div>
+                <div class="slide"><img src="Imagens/BD imagens/propaganda 3.jpg" alt="Imagem 3"></div>
+            </div>
+            <!-- Indicadores de navegação -->
+            <div class="indicadores">
+                <span class="ponto" onclick="mudarSlidePara(0)"></span>
+                <span class="ponto" onclick="mudarSlidePara(1)"></span>
+                <span class="ponto" onclick="mudarSlidePara(2)"></span>
+            </div>
+        </div>
+
+
+    </section>
+    <!-- sessao produtos da loja -->
+    <section class="produtos-sessao">
+        <!-- Titulo Loja -->
+        <div class="container-bloco-title">
+            <h2 class="subtitulos-produtos-apresentacao">
+                <i class="bi bi-box"></i> Loja
+            </h2>
+        </div>
+        <!-- carrossel de produtos -->
+        <div class="produto-carrossel">
+            <button class="btn-antes-carrosel-produto" onclick="slidePrev()">&#10094;</button>
+            <div class="produto-container" id="loja-carousel">
+                <div class="container-card">
+                    <div class="card" id="produto1">
+                        <img id="img-produto" src="Imagens/BD imagens/elastment_transit_mockup.webp" alt="Produto 1" class="produto-img">
+                        <div class="separar-elementos">
+                            <h3 class="marca"><a href="#">Anonima</a></h3>
+                            <p id="nome-produto"><strong>Arco de serra 12" Nove54
+                                </strong></p>
+                            <span class="preco" id="preco-produto">R$15<sup>99</sup></span>
+                            <p class="parcelas" id="parcelas-produto">em 12x sem Juros</p>
+                            <button class="btn-conferir"><a href="PgCompraProduto.html">Conferir</a> </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-card">
+                    <div class="card" id="produto1">
+                        <img id="img-produto" src="Imagens/BD imagens/elastment_transit_mockup.webp" alt="Produto 1" class="produto-img">
+                        <div class="separar-elementos">
+                            <h3 class="marca"><a href="#">Anonima</a></h3>
+                            <p id="nome-produto"><strong>Arco de serra 12" Nove54
+                                </strong></p>
+                            <span class="preco" id="preco-produto">R$15<sup>99</sup></span>
+                            <p class="parcelas" id="parcelas-produto">em 12x sem Juros</p>
+                            <button class="btn-conferir"><a href="PgCompraProduto.html">Conferir</a> </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-card">
+                    <div class="card" id="produto1">
+                        <img id="img-produto" src="Imagens/BD imagens/elastment_transit_mockup.webp" alt="Produto 1" class="produto-img">
+                        <div class="separar-elementos">
+                            <h3 class="marca"><a href="#">Anonima</a></h3>
+                            <p id="nome-produto"><strong>Arco de serra 12" Nove54
+                                </strong></p>
+                            <span class="preco" id="preco-produto">R$15<sup>99</sup></span>
+                            <p class="parcelas" id="parcelas-produto">em 12x sem Juros</p>
+                            <button class="btn-conferir"><a href="PgCompraProduto.html">Conferir</a> </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-card">
+                    <div class="card" id="produto1">
+                        <img id="img-produto" src="Imagens/BD imagens/elastment_transit_mockup.webp" alt="Produto 1" class="produto-img">
+                        <div class="separar-elementos">
+                            <h3 class="marca"><a href="#">Anonima</a></h3>
+                            <p id="nome-produto"><strong>Arco de serra 12" Nove54
+                                </strong></p>
+                            <span class="preco" id="preco-produto">R$15<sup>99</sup></span>
+                            <p class="parcelas" id="parcelas-produto">em 12x sem Juros</p>
+                            <button class="btn-conferir"><a href="PgCompraProduto.html">Conferir</a> </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-proximo-carrosel-produto" onclick="slideNext()">&#10095;</button>
+        </div>
+        <!-- titulo Ferramentas -->
+        <div class="container-bloco-title">
+            <h2 class="subtitulos-produtos-apresentacao">
+                <i class="bi bi-hammer"> Ferramentas</i>
+            </h2>
+        </div>
+        <div class="produto-carrossel">
+            <button class="btn-antes-carrosel-produto" onclick="slidePrev()">&#10094;</button>
+            <div class="produto-container" id="loja-carousel">
+                <div class="container-card">
+                    <div class="card" id="produto1">
+                        <img id="img-produto" src="Imagens/BD imagens/elastment_transit_mockup.webp" alt="Produto 1" class="produto-img">
+                        <div class="separar-elementos">
+                            <h3 class="marca"><a href="#">Anonima</a></h3>
+                            <p id="nome-produto"><strong>Arco de serra 12" Nove54
+                                </strong></p>
+                            <span class="preco" id="preco-produto">R$15<sup>99</sup></span>
+                            <p class="parcelas" id="parcelas-produto">em 12x sem Juros</p>
+                            <button class="btn-conferir"><a href="PgCompraProduto.html">Conferir</a> </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-card">
+                    <div class="card" id="produto1">
+                        <img id="img-produto" src="Imagens/BD imagens/elastment_transit_mockup.webp" alt="Produto 1" class="produto-img">
+                        <div class="separar-elementos">
+                            <h3 class="marca"><a href="#">Anonima</a></h3>
+                            <p id="nome-produto"><strong>Arco de serra 12" Nove54
+                                </strong></p>
+                            <span class="preco" id="preco-produto">R$15<sup>99</sup></span>
+                            <p class="parcelas" id="parcelas-produto">em 12x sem Juros</p>
+                            <button class="btn-conferir"><a href="PgCompraProduto.html">Conferir</a> </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-card">
+                    <div class="card" id="produto1">
+                        <img id="img-produto" src="Imagens/BD imagens/elastment_transit_mockup.webp" alt="Produto 1" class="produto-img">
+                        <div class="separar-elementos">
+                            <h3 class="marca"><a href="#">Anonima</a></h3>
+                            <p id="nome-produto"><strong>Arco de serra 12" Nove54
+                                </strong></p>
+                            <span class="preco" id="preco-produto">R$15<sup>99</sup></span>
+                            <p class="parcelas" id="parcelas-produto">em 12x sem Juros</p>
+                            <button class="btn-conferir"><a href="PgCompraProduto.html">Conferir</a> </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-card">
+                    <div class="card" id="produto1">
+                        <img id="img-produto" src="Imagens/BD imagens/elastment_transit_mockup.webp" alt="Produto 1" class="produto-img">
+                        <div class="separar-elementos">
+                            <h3 class="marca"><a href="#">Anonima</a></h3>
+                            <p id="nome-produto"><strong>Arco de serra 12" Nove54
+                                </strong></p>
+                            <span class="preco" id="preco-produto">R$15<sup>99</sup></span>
+                            <p class="parcelas" id="parcelas-produto">em 12x sem Juros</p>
+                            <button class="btn-conferir"><a href="PgCompraProduto.html">Conferir</a> </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-proximo-carrosel-produto" onclick="slideNext()">&#10095;</button>
+        </div>
+
+        <!-- titulo Pintura -->
+        <div class="container-bloco-title">
+            <h2 class="subtitulos-produtos-apresentacao">
+                <i class="bi bi-palette"></i> Pintura
+            </h2>
+        </div>
+        <div class="produto-carrossel">
+            <button class="btn-antes-carrosel-produto" onclick="slidePrev()">&#10094;</button>
+            <div class="produto-container" id="loja-carousel">
+                <div class="container-card">
+                    <!-- Produto 1 -->
+                    <div class="card"> <img src="Imagens/BD imagens/elastment_transit_mockup.webp" alt="Produto 1"
+                            class="produto-img">
+                        <div class="separar-elementos">
+                            <h3 class="marca"><a href="#">Elastment</a></h3>
+                            <p><strong>Cimento Elástico Impermeabilizante Caixa D'Água 4Kg</strong></p>
+                            <span class="preco">R$200<sup>90</sup></span>
+                            <p class="parcelas">em 2x sem Juros</p>
+                            <button class="btn-conferir"><a href="PgCompraProduto.html">Conferir</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-card">
+                    <!-- Produto 1 -->
+                    <div class="card">
+                        <img src="Imagens/BD imagens/elastment_transit_mockup.webp" alt="Produto 1" class="produto-img">
+                        <div class="separar-elementos">
+                            <h3 class="marca"><a href="#">Elastment</a></h3>
+                            <p><strong>Cimento Elástico Impermeabilizante Caixa D'Água 4Kg</strong></p>
+                            <span class="preco">R$200<sup>90</sup></span>
+                            <p class="parcelas">em 2x sem Juros</p>
+                            <button class="btn-conferir"><a href="PgCompraProduto.html">Conferir</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-card">
+                    <!-- Produto 1 -->
+                    <div class="card">
+                        <img src="Imagens/BD imagens/elastment_transit_mockup.webp" alt="Produto 1" class="produto-img">
+                        <div class="separar-elementos">
+                            <h3 class="marca"><a href="#">Elastment</a></h3>
+                            <p><strong>Cimento Elástico Impermeabilizante Caixa D'Água 4Kg</strong></p>
+                            <span class="preco">R$200<sup>90</sup></span>
+                            <p class="parcelas">em 2x sem Juros</p>
+                            <button class="btn-conferir"><a href="PgCompraProduto.html">Conferir</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-card">
+                    <!-- Produto 1 -->
+                    <div class="card">
+                        <img src="Imagens/BD imagens/elastment_transit_mockup.webp" alt="Produto 1" class="produto-img">
+                        <div class="separar-elementos">
+                            <h3 class="marca"><a href="#">Elastment</a></h3>
+                            <p><strong>Cimento Elástico Impermeabilizante Caixa D'Água 4Kg</strong></p>
+                            <span class="preco">R$200<sup>90</sup></span>
+                            <p class="parcelas">em 2x sem Juros</p>
+                            <button class="btn-conferir"><a href="PgCompraProduto.html">Conferir</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-proximo-carrosel-produto" onclick="slideNext()">&#10095;</button>
+        </div>
+
+        <!-- titulo Materiais -->
+        <div class="container-bloco-title">
+            <h2 class="subtitulos-produtos-apresentacao">
+                <i class="bi bi-bricks"></i> Materiais
+            </h2>
+        </div>
+        <div class="produto-carrossel">
+            <button class="btn-antes-carrosel-produto" onclick="slidePrev()">&#10094;</button>
+            <div class="produto-container" id="loja-carousel">
+                <div class="container-card">
+                    <!-- Produto 1 -->
+                    <div class="card"> <img src="Imagens/BD imagens/elastment_transit_mockup.webp" alt="Produto 1"
+                            class="produto-img">
+                        <div class="separar-elementos">
+                            <h3 class="marca"><a href="#">Elastment</a></h3>
+                            <p><strong>Cimento Elástico Impermeabilizante Caixa D'Água 4Kg</strong></p>
+                            <span class="preco">R$200<sup>90</sup></span>
+                            <p class="parcelas">em 2x sem Juros</p>
+                            <button class="btn-conferir"><a href="PgCompraProduto.html">Conferir</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-card">
+                    <!-- Produto 1 -->
+                    <div class="card">
+                        <img src="Imagens/BD imagens/elastment_transit_mockup.webp" alt="Produto 1" class="produto-img">
+                        <div class="separar-elementos">
+                            <h3 class="marca"><a href="#">Elastment</a></h3>
+                            <p><strong>Cimento Elástico Impermeabilizante Caixa D'Água 4Kg</strong></p>
+                            <span class="preco">R$200<sup>90</sup></span>
+                            <p class="parcelas">em 2x sem Juros</p>
+                            <button class="btn-conferir"><a href="PgCompraProduto.html">Conferir</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-card">
+                    <!-- Produto 1 -->
+                    <div class="card">
+                        <img src="Imagens/BD imagens/elastment_transit_mockup.webp" alt="Produto 1" class="produto-img">
+                        <div class="separar-elementos">
+                            <h3 class="marca"><a href="#">Elastment</a></h3>
+                            <p><strong>Cimento Elástico Impermeabilizante Caixa D'Água 4Kg</strong></p>
+                            <span class="preco">R$200<sup>90</sup></span>
+                            <p class="parcelas">em 2x sem Juros</p>
+                            <button class="btn-conferir"><a href="PgCompraProduto.html">Conferir</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-card">
+                    <!-- Produto 1 -->
+                    <div class="card">
+                        <img src="Imagens/BD imagens/elastment_transit_mockup.webp" alt="Produto 1" class="produto-img">
+                        <div class="separar-elementos">
+                            <h3 class="marca"><a href="#">Elastment</a></h3>
+                            <p><strong>Cimento Elástico Impermeabilizante Caixa D'Água 4Kg</strong></p>
+                            <span class="preco">R$200<sup>90</sup></span>
+                            <p class="parcelas">em 2x sem Juros</p>
+                            <button class="btn-conferir"><a href="PgCompraProduto.html">Conferir</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-proximo-carrosel-produto" onclick="slideNext()">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Cards navegaveis -->
+    <section id="section4">
+        <div class="container-card-navegaveis">
+            <div class="card1-pagina-Materiais">
+                <h4 class="titulo-card-navegavel">MATERIAIS</h4>
+                <img src="Imagens/BD imagens/Propaganda 4.jpg" alt="foto-representativa-do-site ">
+                <div class="alinhamento-botao-cards-navega">
+                    <button class="botao-de-direcionamento">Conferir</button>
+                </div>
+            </div>
+
+            <div class="card2-pagina-ferramentas">
+                <h4 class="titulo-card-navegavel">FERRAMENTAS</h4>
+                <img src="Imagens/BD imagens/propaganda 3.jpg" alt="foto-representativa-do-site ">
+                <div class="alinhamento-botao-cards-navega">
+                    <button class="botao-de-direcionamento">Conferir</button>
+                </div>
+            </div>
+
+            <div class="card3-navegacional">
+                <div class="centralizacao-conteudo-card-navegavel">
+                    <h4 class="titulo-card-navegavel">NAVEGAVEIS</h4>
+                    <li><a href="PgPrincipal.html">Inicio</a></li>
+                    <li><a href="PgAjuda.html">Ajuda</a></li>
+                    <li><a href="PgProdutos.html">Loja</a></li>
+                    <li><a href="#">Sua Conta</a></li>
+                    <li><a href="#">Contato</a></li>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- cards de confiabilidade -->
+    <section id="section5">
+
+        <div class="container-cards-seguranca">
+
+            <div class="card-seguranca">
+                <i class="bi bi-shield-check"></i>
+                <h5>
+                    100% de segurança em sua compra
+                </h5>
+                <br>
+                <p>Garantimos que sua compra seja realizada devidamente e caso não realizaremos reembolso</p>
+            </div>
+            <div class="card-seguranca">
+                <i class="bi bi-credit-card-2-back-fill"></i>
+                <h5>
+                    Escolha o Método de Pagamento
+                </h5>
+                <br>
+                <p>Possuimos varios metodos , entre eles são
+                    pix, cartoes de credito e debito , boletos
+                    e tranferencia bancaria.</p>
+
+            </div>
+            <div class="card-seguranca">
+                <i class="bi bi-car-front-fill"></i>
+                <h5>
+                    Realizamos sua entrega
+                </h5>
+                <br>
+                <p>Garantimos que sua compra seja realizada devidamente e caso não realizaremos reembolso</p>
+
+            </div>
+            <div class="card-seguranca">
+                <i class="bi bi-cloud-download"></i>
+                <h5>
+                    Reembolso imediato
+                </h5>
+                <br>
+                <p>Caso ocorra qualquer dificuldade na compra ou ao adquirir algum produto na loja será feito um
+                    reembolso em 48h</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ícone de chat -->
+    <div id="container-icone-chat">
+        <div class="move-icon">
+            <span>
+                <a class="chat" id="btn-chat-comercio">
+                    <i class="bi bi-chat-dots-fill"></i>
+                </a>
+            </span>
+        </div>
+
+        <!-- Janela de chat -->
+        <div id="chat-box" class="chat-box">
+            <div class="chat-header">
+                <h4>Chat Providencial</h4>
+                <button id="btn-close-chat" class="close-chat">&times;</button>
+            </div>
+            <div class="chat-content">
+                <p>Olá! Como podemos ajudar você?</p>
+                <a href="https://api.whatsapp.com/send?phone=71993998237&text=Gostaria%20de%20receber%20mais%20informações?"
+                    target="_blank" class="chat-link">Clique aqui para conversar no WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="rodape-informativo">
+        <div class="aligm-texto">
+            <div class="texto-container">
+                <i class="bi bi-clock"></i>
+                <div>
+                    <h3 class="informacao-rodape">Horário de Funcionamento</h3>
+                    <h5 class="informacao-rodape">De segunda-feira a sábado das 7h às 20h</h5>
+                </div>
+            </div>
+
+            <div class="texto-container">
+                <i class="bi bi-telephone"></i>
+                <div>
+                    <h3 class="informacao-rodape">(71) 0000-0000</h3>
+                </div>
+            </div>
+
+            <div class="texto-container">
+                <i class="bi bi-envelope"></i>
+                <div>
+                    <h3 class="informacao-rodape">emaildaloja@gmail.com</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="rodape">
+        <div class="footer-content">
+            <div class="navegacao">
+                <h4>Navegue</h4>
+                <nav>
+                    <ul class="links-de-direcionamento-footer">
+                        <li><a href="PgPrincipal.html">Início</a></li>
+                        <li><a href="PgProdutos.html">Loja</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="redes-sociais">
+                <h4>Redes sociais</h4>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Termos e condições</a></li>
+                    <li><a href="#">Trabalhe conosco</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="#">Acessibilidade</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+
+            <p>&copy; 2023 Your Website</p>
+        </div>
+    </footer>
+    <script src="JS/Carrosel.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+
+</html>

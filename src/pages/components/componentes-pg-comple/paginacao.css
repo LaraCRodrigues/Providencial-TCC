@@ -1,0 +1,38 @@
+.paginacao {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagina {
+    margin: 0 5px;
+    padding: 8px 16px;
+    background-color: #f2f2f2;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.pagina:hover {
+    background-color: #ddd;
+}
+
+.pagina.ativa {
+    background-color: #333;
+    color: #fff;
+}
+.paginacao .pagina {
+    padding: 8px 12px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.paginacao .pagina.ativa {
+    background-color: #007BFF;
+    color: white;
+    border-color: #007BFF;
+}

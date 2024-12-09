@@ -1,0 +1,7 @@
+.bi-trash{
+    color: red;
+}
+
+.bi-pencil-square{
+    color: var(--cor-texto-elementos);
+}

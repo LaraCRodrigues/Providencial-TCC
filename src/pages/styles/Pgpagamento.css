@@ -1,0 +1,290 @@
+* {
+    /* padding: 0;
+    margin: 0; */
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+body{
+    background-color: #DFDFDF;
+  }
+  /* Define a estrutura flexível da seção principal */
+.card-pagamento1 {
+    margin: 10px auto; /* Centraliza horizontal e verticalmente */
+    border-radius: 10px;
+    width: 70vw;
+    display: flex;
+    gap: 20px; /* Espaço entre os elementos */
+    padding: 10px 10px;
+    background-color: var(--cor-fundo-site-padrao);
+    align-items: center;
+    justify-content: space-evenly;
+}
+.card-pagamento1 h3 {
+    color: #007bff; /* Exemplo: Cor específica para o primeiro h3 */
+}
+/* Coloca o conteúdo interno dos blocos em coluna */
+.card-pagamento1 > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Estilo opcional para o título e valor */
+.card-pagamento1 h3 {
+    font-size: 1.2em;
+    margin: 0;
+    color: #333;
+}
+
+.card-pagamento1 h5 {
+    font-size: 1em;
+    margin: 0;
+    color: #555;
+}
+
+
+/* comprando produtos */
+
+#produto-adicionado {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+#produto-adicionado input[type="image"] {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#produto-adicionado h4 {
+    margin: 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+#produto-adicionado p {
+    margin: 3px 0;
+    color: #555;
+}
+.card-pagamento2{
+    margin: 10px auto;
+    border-radius: 10px;
+    width: 70vw;
+    margin-top: 20px;
+    padding: 10px 10px;
+background-color: var(--cor-fundo-site-padrao);
+}
+#produto-adicionado {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+.imagem-produto-pag{
+    width: 100px;
+    height: 100px;
+}
+/* Alinhamento horizontal dos blocos "Produto" e "Quantidade" */
+.informacoes {
+    display: flex;
+    gap: 50px; 
+}
+
+/* Estilos opcionais */
+#produto-adicionado input[type="image"] {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.informacoes h4 {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.informacoes p {
+    color: #555;
+    margin: 3px 0;
+    font-weight: bold;
+
+}
+
+/* frete */
+/* Alinha os elementos verticalmente */
+.frete-info {
+    display: flex;
+    flex-direction: column; /* Alinha os itens verticalmente */
+    margin: 10px;
+}
+
+/* Estilos opcionais para o ícone e texto */
+.frete-info i {
+    font-size: 1.5em;
+    color: #007bff;
+}
+
+.frete-info p {
+    
+    font-weight: bold;
+}
+
+
+/* Contêiner para alinhar os botões */
+.container-botoes-pagamento {
+    display: flex;
+    margin-left: 4%;
+}
+
+/* Estilo para o primeiro botão (exclusão) */
+.container-botoes-pagamento button:first-child {
+    background-color: #ff4d4d; /* Vermelho */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+/* Estilo para o segundo botão (edição) */
+.container-botoes-pagamento button:last-child {
+    background-color: #cc0000; /* Amarelo */
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+
+/* bloco 3 metodos de pagamento */
+.card-pagamento3 {
+    margin: 10px auto; 
+    border-radius: 10px;
+    width: 70vw;
+    display: flex;
+    gap: 20px; 
+    padding: 10px 10px;
+    background-color: var(--cor-fundo-site-padrao);
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+}
+/* Estilos para o seletor de pagamento */
+#metodo-pagamento {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+/* Efeito de foco */
+#metodo-pagamento:focus {
+    border-color: #007bff;
+    outline: none;
+}
+/* Estilo para o seletor de pagamento */
+#metodo-pagamento {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px; /* Espaçamento entre o h4 e o seletor */
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+/* Efeito de foco */
+#metodo-pagamento:focus {
+    border-color: #007bff;
+    outline: none;
+}   
+
+.total {
+    width: 100%;
+}
+
+.total h4 {
+    margin-bottom: 5px; /* Espaçamento entre o h4 e o p */
+}
+
+#total-compra {
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+}
+/* Estilo do botão de compra */
+.card-pagamento3 button {
+    width: 10%;
+    padding: 10px;
+    font-size: 1em;
+    color: white;
+    background-color: var(--cor-botoes-conferir);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-pagamento3 button:hover {
+    background-color: var(--cor-hover-botao);
+}
+
+/* modal exclusao */
+
+/* Estilo do modal (inicialmente oculto) */
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+
+.modal-botoes {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.confirmar {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancelar {
+    background-color: #ccc;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}

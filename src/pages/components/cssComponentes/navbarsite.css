@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+  --cor-palleta-claro-base: #ffdf35;
+  --cor--palleta-amarelo-forte: #ffd706;
+  --cor-botoes-conferir: #ff6600;
+  --cor-secundaria: #2ecc71;
+  --cor-texto-elementos: #357EBD;
+  --cor-fundo-site-padrao: #FFFFFF;
+  --cor-hover-botao: #DFDFDF;
+}
+
+/* Atributos da 1 navbar  */
+.container-1navbar {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.container-1navbar>h4 {
+  color: white;
+}
+
+select {
+  border-radius: 5px;
+  font-size: 15px;
+
+}
+
+.container-2navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.container-2navbar img {
+  width: 170px;
+  max-width: 200px;
+  margin: 0px;
+}
+
+
+
+
+.icons-2navbar {
+  margin: 10px;
+
+
+}
+
+/* botao conta cadastro e login */
+
+
+#conta {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+#conta:hover {
+  transition: 0.5s;
+  text-decoration: underline;
+}
+
+.btn-cadastrar-login > a {
+  text-decoration: none;
+}
+
+.btn-cadastrar-login {
+  border: 1px solid white;
+  padding: 8px 7px;
+  align-items: center;
+  text-align: center;
+  background-color: #007bff;
+  display: inline-block;
+  color: #fff;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-cadastrar-login::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10rem;
+  z-index: -2;
+}
+
+.btn-cadastrar-login::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--cor-hover-botao);
+  transition: all .3s;
+  z-index: -1;
+}
+
+.btn-cadastrar-login:hover {
+  color: var(--cor-texto-elementos);
+}
+
+.btn-cadastrar-login:hover::before {
+  width: 100%;
+}
+
+
+.btn-cadastrar-login>a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+/* /////////////////////////////// */
+
+/* navbar navegaveis  */
+.links-categoria {
+  text-decoration: none;
+  margin: 0px 30px;
+}
+
+#navbar1 {
+
+  background-color: #357EBD;
+}
+
+#navbar2 {
+  background-color: #ffdf35;
+}
+
+#navbar3 {
+  background-color: #ffd706;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn-navbar {
+  margin: 10px;
+}
+
+.flex-hrcategorias {
+  display: flex;
+  margin: 10px;
+  gap: 10px;
+  align-items: center;
+
+}
+
+hr {
+  height: 40px;
+}
+
+.flex-links-cat {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.center-links {
+
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+}
+
+
+/* Estilo do botão de categorias */
+.flex-hrcategorias {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-h i {
+  font-size: 24px;
+}
+
+.menu-h {
+  align-items: center;
+}
+
+.menu-h>a {
+  color: #FFFFFF;
+}
+
+.menu-h>i {
+  color: #FFFFFF;
+}
+
+.links-categorias-inter i {
+  color: #FFFFFF;
+}
+
+.links-categorias-inter>li {
+  list-style: none;
+  margin-bottom: 10px;
+  /* Espaço entre os links principais */
+}
+
+.links-categorias-inter>li>a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  padding: 8px;
+  display: block;
+}
+
+
+/* Estilos da barra lateral */
+.barra-lateral-categorias {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: orange;
+  color: white;
+  padding: 20px;
+  transition: left 0.3s ease;
+  z-index: 100000;
+}
+
+.barra-lateral-categorias h3 {
+  margin-top: 0;
+}
+
+.barra-lateral-categorias ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.barra-lateral-categorias ul li {
+  margin: 15px 0;
+}
+
+.barra-lateral-categorias ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.barra-lateral-categorias ul li a:hover {
+  color: #ddd;
+}
+
+/* Classe para mostrar a barra lateral */
+.barra-lateral-categorias.show {
+  left: 0;
+}
+
+.subcategorias {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 5px;
+  display: none;
+  margin-left: 15px;
+}
+
+.subcategorias li {
+  padding-top: 5px;
+  margin-bottom: 5px;
+}
+
+.subcategorias li a {
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+  padding: 5px;
+  display: block;
+}
+
+.subcategorias li a i {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.links-categorias-inter>li>a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  padding: 8px;
+  display: flex;
+  align-items: center
+}
+
+.links-categorias-inter>li>a i {
+  margin-left: 5px;
+  /* Espaço entre o texto e o ícone */
+}
+
+.barra-lateral-categorias li:hover>.subcategorias {
+  display: block;
+}
+
+/* carrinho */
+.sidebar-carrinho {
+  width: 300px;
+  height: 100%;
+  background-color: var(--cor--palleta-amarelo-forte);
+  position: fixed;
+  right: -300px;
+  /* Inicialmente fora da tela */
+  top: 0;
+  transition: right 0.3s ease;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 20000;
+}
+
+.sidebar-carrinho h2 {
+  margin: 0 0 20px;
+  color: var(--cor-fundo-site-padrao);
+}
+
+.sidebar-carrinho ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-carrinho li {
+  margin-bottom: 10px;
+}
+
+.subtotal {
+  margin-top: 20px;
+}
+
+#finalizarCompra {
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#fecharCarrinho {
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* botao acessibilidade */
+/* Botão de Acessibilidade */
+#btn-acessibilidade {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  z-index: 1;
+  transition: background-color 0.3s;
+}
+
+#btn-acessibilidade:hover {
+  background-color: #2980b9;
+}
+
+/* Balão Flutuante de Acessibilidade */
+.balao-acessibilidade {
+  display: none;
+  position: absolute;
+  top: 50px; /* Ajuste para alinhar verticalmente ao botão */
+  right: 20px; /* Alinhamento horizontal */
+  width: 200px;
+  padding: 15px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  z-index: 100;
+}
+
+/* Cabeçalho do Balão */
+.balao-acessibilidade h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+.balao-acessibilidade h4{
+  font-weight: 700;
+}
+.balao-acessibilidade li a{
+  color: #007bff;
+}
+/* Links de Acessibilidade */
+.bloco-links-acessibilidade a {
+  display: block;
+  margin: 8px 0;
+  color: #3498db;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* .bloco-links-acessibilidade a:hover {
+  text-decoration: ;
+} */
+
+.fechar-balao {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  
+}
+.fechar-balao i{
+  color: #de2a2a;
+
+}
+
+.fechar-balao:hover {
+  color: #555;
+}
+
+/* funcinalidades acessibilidade */
+.fonte-grande * {
+  font-size: 1.05em;
+}
+
+.alto-contraste {
+  filter: grayscale(100%);
+  color: #fff;
+}
+
+.alto-contraste a {
+  color: #FFFFFF;
+}
+
+/* Estilo para Textos em Negrito */
+.texto-negrito * {
+  font-weight: bold !important;
+}
+
+
+
+/* barra pesquisa */
+.container-1navbar {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+}
+.container-1navbar>h4{
+color:white;
+}
+select {
+  border-radius: 5px;
+font-size: 15px;
+
+}
+
+
+/* Estilo do campo de texto da pesquisa */
+.barra-pesquisa-produtos input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 13px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+}
+
+/* Estilo do botão de busca */
+.barra-pesquisa-produtos button.botao-buscar-produtos {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 10px 10px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  align-items: center;
+}
+
+/* barra pesquisa - produtos */
+
+.aba-pesquisa-itens{
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  }
+
+  .botao-buscar-produtos {
+      background-color: #357EBD;
+      border: white 1px solid;
+      color: white;
+      align-items: center;
+      text-align: center;
+      padding: 15px 15px 15px 15px;
+      border-radius: 30px;
+      cursor: pointer;
+
+
+  }
+
+  /* Estilo da barra de pesquisa */
+  .barra-pesquisa-produtos {
+      display: flex;
+      justify-content:center ;
+      align-items: center;
+      width: 590px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+  
+  }
+

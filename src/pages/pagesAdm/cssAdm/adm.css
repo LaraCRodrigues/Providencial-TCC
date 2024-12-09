@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+root {
+    --cor-palleta-claro-base: #ffdf35 ;
+    --cor--palleta-amarelo-forte: #ffd706;
+    --cor-botoes-conferir:#ff6600;
+    --cor-secundaria: #2ecc71;
+    --cor-texto-elementos: #357EBD;
+    --cor-fundo-site-padrao: #FFFFFF;
+    --cor-hover-botao: #DFDFDF;
+  }
+  .titulo-adm{
+    text-align: left;
+  }
+.bi-gear-fill{
+    color: var(--cor-texto-elementos);
+}
+      
+.cards-atalhos-adm{
+    padding: 10px 20px;
+    background-color: #FFFFFF;
+
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.cards-atalhos-adm2{
+    padding: 10px 20px;
+    margin-top: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+    background-color: #FFFFFF;
+}
+.cards-atalhos-adm2 > .btn-link-conferir{
+list-style: none;
+text-decoration: none;
+font-weight: 700;
+}
+a{
+    text-decoration: none;
+}
+.container-img-prop>img{
+    width: 550px;
+}
+.container-img-prop{
+    display: flex;
+    gap: 20px;
+}
+.card-atalho-gerenciamento{
+    color: var(--cor-texto-elementos);
+    padding: 10px 20px;
+    margin-top: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+    background-color: #FFFFFF;
+}
+
+
+.btn-link-conferir-gerenc {
+    margin-top: 210px;
+    margin-left: 250px;
+    list-style: none;
+    text-decoration: none;
+    font-weight: 700;
+}
+

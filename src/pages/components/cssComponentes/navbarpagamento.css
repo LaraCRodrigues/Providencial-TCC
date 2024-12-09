@@ -1,0 +1,38 @@
+
+:root {
+    --cor-palleta-claro-base: #ffdf35 ;
+    --cor--palleta-amarelo-forte: #ffd706;
+    --cor-botoes-conferir:#ff6600;
+    --cor-secundaria: #2ecc71;
+    --cor-texto-elementos: #357EBD;
+    --cor-fundo-site-padrao: #FFFFFF;
+    --cor-hover-botao: #DFDFDF;
+
+  }
+  
+.container-2navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.container-2navbar img  {
+    width: 170px;
+    max-width: 200px;
+    margin: 0px;
+}
+  .strong{
+    font-weight: 800;
+  }
+  #navbar-pagamento{
+    background-color: var(--cor--palleta-amarelo-forte);
+  }
+  #navbar-pagamento h4 {
+    color: #FFFFFF;
+    font-weight: 800;
+}
+    #navbar-pagamento a{
+    color: #FFFFFF;
+    text-decoration: none;
+}

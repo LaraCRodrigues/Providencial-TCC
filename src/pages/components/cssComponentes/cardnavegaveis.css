@@ -1,0 +1,79 @@
+
+/* cards navegais */
+
+
+.container-card-navegaveis {
+    display: flex;
+    justify-content: center;
+    /* Faz com que os cards "quebrem" em linhas se o espaço for pequeno */
+    gap: 20px;
+    /* Espaço entre os cards */
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Cards básicos */
+.card1-pagina-Materiais,
+.card2-pagina-ferramentas,
+.card3-navegacional {
+    flex: 1 1 300px;
+    /* Os cards ocupam pelo menos 300px e podem se expandir */
+    max-width: 32%;
+    /* Cada card ocupa no máximo 32% do container */
+background-color: var(--cor-fundo-site-padrao);
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Centralização do conteúdo no card 3 */
+.centralizacao-conteudo-card-navegavel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.centralizacao-conteudo-card-navegavel > li{
+    margin-top: 5%;
+    align-items: center;
+ list-style: none;
+ text-align: center;   
+}
+
+.titulo-card-navegavel {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ff6600;
+}
+
+/* Estilos para as imagens */
+.card1-pagina-Materiais img,
+.card2-pagina-ferramentas img,
+.card3-navegacional img {
+    width: 100%;
+    /* A imagem ocupa toda a largura do card */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    border-radius: 5px;
+    /* Bordas arredondadas, igual ao card */
+    margin-bottom: 10px;
+    /* Espaço entre a imagem e o restante do conteúdo */
+}
+
+/* Alinhamento do botão nos cards 1 e 2 */
+.alinhamento-botao-cards-navega {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Botão de direcionamento */
+.botao-de-direcionamento {
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

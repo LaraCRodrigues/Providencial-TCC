@@ -1,0 +1,125 @@
+
+
+/* icones bootstrap */
+
+.bi-envelope{
+    color: #FFFFFF;
+}
+.bi-telephone{
+    color: #FFFFFF;
+}
+.bi-clock{
+    color: #FFFFFF;
+}
+.bi-heart{
+    color: #FFFFFF;
+}
+.bi-cart{
+    color: #FFFFFF;
+}
+.bi-gear-fill{
+    color: #007bff;
+}
+.bi-palette-fill{
+    color: #007bff;
+}
+.bi-list {
+    font-size: 20px;
+
+}
+.bi-chat-dots-fill {
+    color: white;
+}
+.bi-search {
+    font-size: 17px;
+}
+
+.bi-person-fill {
+    margin-right: 10px;
+    font-size: 20px;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.bi-cart {
+  
+    padding: 10px;
+    border-radius: 3px;
+
+}
+
+.bi-whatsapp {
+    font-size: 35px;
+    align-items: center;
+    margin: 10px;
+
+}
+
+.bi-x-circle {
+    font-size: 17px;
+}
+
+.btn-fechar {
+    margin-left: -10px;
+}
+
+.bi-heart-fill {
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0px 15px;
+}
+
+.bi-cart {
+    
+    cursor: pointer;
+
+}
+
+.bi-cart:hover {
+    transition: 0.7s;
+    color: #e4e4e4;
+
+}
+
+.bi-heart-fill:hover {
+    transition: 0.5s;
+
+}
+
+.icons-2navbar {
+    margin: 10px;
+
+
+}
+
+.bi-archive-fill{
+    color: #007bff;
+}
+
+.subtitulos-produtos-apresentacao{
+    color: #007bff;
+}
+
+.bi-person-fill{
+    color: #FFFFFF;
+}
+.bi-bag-fill{
+    color: #ffbd59;
+}
+.bi-telephone-fill{
+    color: #ffbd59;
+}
+.bi-person-circle{
+    color: #ffbd59;
+}
+.bi-arrow-right-circle-fill{
+    color: #4a90e2;
+    font-size: 50px;
+}
+/* Estilos da seção */
+.bi-archive{
+    color: #007bff;
+  }
+  .bi-chat-dots{
+      color: #007bff;
+  }

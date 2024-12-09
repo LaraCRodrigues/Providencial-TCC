@@ -1,0 +1,329 @@
+
+.container-bloco-title h2{
+    font-weight: 700;
+}
+.subtitulos-produtos-apresentacao {
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+}
+.container-bloco-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; 
+}
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 310px;
+    text-align: center;
+    
+    border-radius: 9px;
+    color: black;
+    flex-direction: row;
+    display: flex   ;
+    align-items: center;
+} 
+ .container-card {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+
+.produto-carrossel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.produto-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    justify-content: center; 
+    padding: 10px;
+
+}
+/* .btn-antes-carrosel-produto, .btn-proximo-carrosel-produto {
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    padding: 210px 10px;
+    border: 1px solid #aaa;
+    border-radius: 50px;
+    padding: 5px 15px;
+
+} */
+/* customizacao de distancia entre os cards produtos - botao proximo e antes  */
+.carrossel-wrapper {
+    position: relative; /* Define o contêiner como referência */
+    display: flex; /* Alinha os botões e o carrossel horizontalmente */
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Ajuste para a largura desejada */
+    max-width: 1200px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza na página */
+  }
+  .btn-antes-carrosel-produto, .btn-proximo-carrosel-produto {
+    background-color: #ffffff;
+    color: #b0afaf;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: 1px solid #aaa;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 10; /* Garante que fiquem sobre os cards */
+  }
+  
+  .btn-antes-carrosel-produto {
+    left: -10px; /* Ajuste a posição para mais perto dos cards */
+  }
+  
+  .btn-proximo-carrosel-produto {
+    right: -10px; /* Ajuste a posição para mais perto dos cards */
+  }
+
+.btn-antes-carrosel-produto, .btn-proximo-carrosel-produto {
+    margin: 10px; 
+}
+
+h3 a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.preco {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f05050;
+}
+
+.preco sup {
+    font-size: 12px;
+}
+
+.parcelas {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.btn-conferir {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border: 1px solid #FFFFFF;
+
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn-conferir a{
+    color: #FFFFFF;
+    list-style: none;
+    text-decoration: none;
+}
+.btn-conferir:hover {
+    background-color: #c7c3c0;
+}
+
+/* icones bootstrap */
+.bi{
+    color: white;
+}
+.bi-box{
+    color: #007bff;
+}
+
+
+.bi-archive-fill{
+    color: #007bff;
+}
+
+.subtitulos-produtos-apresentacao{
+    color: #007bff;
+
+}
+.subtitulos-produtos-apresentacao > i{
+    color: #007bff;
+    font-weight: 800;
+}
+.links-categoria {
+    text-decoration: none;
+    margin: 0px 30px;
+    color: #FFFFFF;
+}
+
+.separar-elementos {
+    display: flex;
+        flex-direction: column;
+    }
+
+.flex-hrcategorias {
+    display: flex;
+    margin: 10px;
+    gap: 10px;
+    align-items: center;
+
+}
+
+hr {
+    height: 40px;
+}
+
+.flex-links-cat {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.center-links {
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+/* pre colocados  */
+.subtitulos-produtos-apresentacao {
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+}
+
+.produtos-sessao{
+    margin-top: 10%;
+}
+/* Estilo dos cards */
+.card {
+    width: 250px; /* Define a largura fixa do card */
+    height: 400px; /* Define a altura fixa do card */
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+    text-align: center; 
+    background-color: #fff; 
+}
+
+.produto-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 10px;
+}
+
+
+/* Imagem do produto */
+.produto-img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Conteúdo interno dos cards */
+.separar-elementos {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Marca e título */
+.marca a {
+    font-size: 14px;
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.marca a:hover {
+    color: #ff5733;
+}
+
+.separar-elementos p {
+    font-size: 14px;
+    color: #333;
+    margin: 8px 0;
+}
+
+/* Preço */
+.preco {
+    font-size: 18px;
+    color: #27ae60;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.preco sup {
+    font-size: 12px;
+    vertical-align: top;
+}
+
+/* Parcelas */
+.parcelas {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Botão de conferir */
+.btn-conferir {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-conferir:hover {
+    background-color: #c44125;
+}
+
+.btn-conferir a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container-card {
+        max-width: 45%;
+    }
+}
+
+/* @media (max-width: 480px) {
+    .container-card {
+        max-width: 100%;
+    }
+} */

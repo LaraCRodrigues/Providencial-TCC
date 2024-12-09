@@ -1,0 +1,76 @@
+/* carrosel de imagens - propagandas */
+.container-propagandas {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+}
+
+.container-propagandas>img {
+    width: 50vw;
+
+}
+
+.carrossel {
+    display: flex;
+    transition: transform 0.5s ease; /* Transição suave */
+}
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    transition: opacity 1s ease;
+    min-width: 100%; /* Cada slide ocupa 100% da largura do contêiner */
+
+}
+
+.slide img {
+    width: 70%;
+    border-radius: 8px;
+}
+
+/* Botões de navegação */
+.anterior, .proximo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.anterior {
+    left: 0;
+}
+
+.proximo {
+    right: 0;
+}
+.anterior:hover,
+.proximo:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.indicadores {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.ponto {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ponto.ativo {
+    background-color: #717171; /* Cor do ponto ativo */
+}

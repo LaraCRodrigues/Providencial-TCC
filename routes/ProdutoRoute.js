@@ -1,35 +1,47 @@
 const express = require("express");
-const Produto = require('../model/Produto'); // Importa o modelo Produto
-
 const router = express.Router();
+const db = require("../config/Db");
 
 // RETORNA TODOS OS PRODUTOS
-router.get('/', async (req, res) => {
-    try {
-        const produtos = await Produto.getAll();
-        res.json(produtos);
-    } catch (error) {
-        console.error("Erro ao obter produtos:", error);
-        res.status(500).json({ message: "Erro ao obter produtos!" });
-    }
+router.get('/getProduto', async (req, res) => {
+    const query = 'SELECT * FROM PRODUTO';
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error("Erro ao obter produtos:", err);
+            return res.status(500).json({ message: "Erro ao obter produtos!" });
+        }
+        res.json(results);
+    });
 });
 
 // ADICIONA UM NOVO PRODUTO
-router.post('http://localhost:3001/adicionarProduto', async (req, res) => {
-    const { nome, preco, descricao } = req.body; 
+router.post('/adicionarProduto', async (req, res) => {
+    console.log("Rota /adicionarProduto acessada. Dados recebidos:", req.body);
+    const { nome, descricao, idCategoria, preco } = req.body;
 
-    try {
-        console.log("entrou no routes de adicionar produto");
-        const newProduct = await Produto.add(nome, preco, descricao);
-        res.status(201).json({ message: "Produto adicionado com sucesso!", produto: newProduct });
-    } catch (error) {
-        console.error("Erro ao adicionar produto:", error);
-        res.status(500).json({ message: "Erro ao adicionar produto!" });
+    // Valida se os dados obrigatórios foram enviados
+    if (!nome || !descricao || !idCategoria || !preco) {
+        return res.status(400).json({ message: "Todos os campos são obrigatórios!" });
     }
+
+    const query = 'INSERT INTO PRODUTO (nome, descricao, idCategoria, preco) VALUES (?, ?, ?, ?)';
+
+    db.query(query, [nome, descricao, idCategoria, preco], (err, results) => {
+        if (err) {
+            console.error("Erro ao adicionar produto:", err);
+            return res.status(500).json({ message: "Erro ao adicionar produto!" });
+        }
+
+        // Envia a resposta com sucesso
+        res.status(201).json({
+            message: "Produto adicionado com sucesso!",
+            produto: { nome, descricao, idCategoria, preco, id: results.insertId }
+        });
+    });
 });
 
 // DELETA UM PRODUTO ATRAVÉS DO ID
-router.delete('/:id', async (req, res) => {
+router.delete('/deletarProduto/:id', async (req, res) => {
     const { id } = req.params;
 
     try {

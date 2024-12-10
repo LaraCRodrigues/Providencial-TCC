@@ -1,10 +1,10 @@
 const db = require("../config/Db");
 
 const Produto = {
-    create: async (nome, descricao, categoria) => {
-        const sql = "INSERT INTO PRODUTO (nome, descricao, categoria) VALUES (?, ?, ?)";
+    create: async (nome, descricao, idCategoria,preco) => {
+        const sql = "INSERT INTO PRODUTO (nome, descricao, idCategoria,preco) VALUES (?, ?, ?,?)";
         try {
-            const result = await db.query(sql, [nome, descricao, categoria]);
+            const result = await db.query(sql, [nome, descricao, idCategoria,preco]);
             return {
                 message: `O ID do Produto ${nome} é: ${result.insertId}`,
                 insertId: result.insertId

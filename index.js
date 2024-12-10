@@ -1,13 +1,13 @@
 const express = require('express');
 const dotenv = require('dotenv');
-// Carregar variáveis de ambiente
-dotenv.config();
+const bodyParser = require('body-parser');
 const cors = require('cors');
-
+dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Middleware para parsing de JSON
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Importação das rotas
@@ -18,11 +18,11 @@ const pagamentoRoutes = require('./routes/PagamentoRoute');
 const categoriaRoutes = require('./routes/CategoriaRoute'); 
 
 // Definição das rotas
-app.use('/api/clientes', clientRoutes);
-app.use('/api/funcionarios', funcionarioRoutes);
-app.use('/api/produtos', produtoRoutes);
-app.use('/api/pagamentos', pagamentoRoutes);
-app.use('/api/categorias', categoriaRoutes);
+app.use('/clientes', clientRoutes);
+app.use('/funcionarios', funcionarioRoutes);
+app.use('/produtos', produtoRoutes);
+app.use('/pagamentos', pagamentoRoutes);
+app.use('/categorias', categoriaRoutes);
 
 // Middleware de tratamento de erros
 app.use((err, req, res, next) => {
@@ -32,23 +32,13 @@ app.use((err, req, res, next) => {
     res.status(status).json({ error: message });
 });
 
-const allowedOrigins = [
-    'http://localhost:3000',
-    'http://localhost:3001',
-    ];
+app.use(cors({
+    origin: '*', // Permite qualquer origem
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos HTTP permitidos
+    allowedHeaders: ['Content-Type', 'Authorization'], // Cabeçalhos permitidos
+}));
 
-const corsOptions = {
-    origin: function (origin, callback) {
-        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-            callback(null, true);
-        } else {
-            console.log('Origin:', origin);
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-};
 
-app.use(cors(corsOptions));
 // Iniciar o servidor
 app.listen(PORT, () => {
     console.log(`Server Link: http://localhost:${PORT}`);

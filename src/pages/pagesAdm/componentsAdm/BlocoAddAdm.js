@@ -39,25 +39,6 @@ const Dashboard = () => {
     setModalAlterarVisible(false);
   };
 
-  // Função para adicionar um produto
-  /* const adicionarProduto = (e) => {
-     e.preventDefault();
-     const nome = e.target.nome.value;
-     const descricao = e.target.descricao.value;
-     const idCategoria = e.target.idCategoria.value;
-     const preco = e.target.preco.value;
- 
-     const novoProduto = {
-       nome,
-       quantidade: 1,
-       dataCadastro: new Date().toLocaleDateString(),
-       imagem: 'imagem_default.jpg',
-     };
- 
-     setProdutos([...produtos, novoProduto]);
-     fecharModalAdicionar();
-   };*/
-
   const adicionarProduto = async (e) => {
     e.preventDefault();
 
@@ -73,36 +54,9 @@ const Dashboard = () => {
       preco,
     };
 
-  //   try {
-  //     // Enviar dados para o backend (Express)
-  //     const response = await fetch('http://localhost:3000/adicionarProduto', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(novoProduto),
-  //     });
-
-  //     const data = await response.json();
-
-  //     if (response.ok) {
-  //       // Se o produto for adicionado com sucesso, atualize a lista de produtos
-  //       setProdutos([...produtos, data.produto]);
-  //       fecharModalAdicionar();
-  //       alert('Produto adicionado com sucesso!');
-  //     } else {
-  //       alert('Erro ao adicionar produto: ' + data.message);
-  //     }
-  //   } catch (error) {
-  //     console.error("caiu no error teste: " + error);
-  //     // console.error('Erro ao enviar dados para o servidor:', error);
-  //     alert('Erro de rede!');
-  //   }
-  // };
-
   try {
-    console.log("informações do produto: " +JSON.stringify(novoProduto));
-    const response = await fetch('http://localhost:3000/adicionarProduto', {
+    console.log("informações do produto: ", JSON.stringify(novoProduto));
+    const response = await fetch('http://localhost:3001/produtos/adicionarProduto', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -110,13 +64,15 @@ const Dashboard = () => {
       body: JSON.stringify(novoProduto),
     });
 
+    const data = await response.json();
+    
     if (response.ok) {
       // Se o produto for adicionado com sucesso, atualize a lista de produtos
       setProdutos([...produtos, data.produto]);
       fecharModalAdicionar();
       alert('Produto adicionado com sucesso!');
     } else {
-      alert('Erro ao adicionar produto: ' + data.message);
+      alert('Erro ao adicionar produto: ' );
     }
 
     if (!response.ok) {
@@ -124,7 +80,6 @@ const Dashboard = () => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const data = await response.json();
     console.log("Resposta do servidor:", data);
     return data;
   } catch (error) {

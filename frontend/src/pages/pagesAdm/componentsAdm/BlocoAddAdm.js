@@ -41,53 +41,52 @@ const Dashboard = () => {
 
   const adicionarProduto = async (e) => {
     e.preventDefault();
-
+  
     const nome = e.target.nome.value;
     const descricao = e.target.descricao.value;
     const idCategoria = e.target.idCategoria.value;
     const preco = e.target.preco.value;
-
+  
     const novoProduto = {
       nome,
       descricao,
       idCategoria,
       preco,
     };
-
-  try {
-    console.log("informações do produto: ", JSON.stringify(novoProduto));
-    const response = await fetch('http://localhost:3001/produtos/adicionarProduto', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(novoProduto),
-    });
-
-    const data = await response.json();
-    
-    if (response.ok) {
-      // Se o produto for adicionado com sucesso, atualize a lista de produtos
+  
+    try {
+      console.log("informações do produto: ", JSON.stringify(novoProduto));
+  
+      const response = await fetch('http://localhost:3001/produtos/adicionarProduto', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(novoProduto),
+      });
+  
+      // Verifica se a resposta foi OK
+      if (!response.ok) {
+        // Caso a resposta não seja OK, lança um erro com o status HTTP
+        throw new Error(`Erro ao adicionar produto! Status: ${response.status}`);
+      }
+  
+      // Tenta pegar o corpo da resposta como JSON
+      const data = await response.json();
+  
+      // Se o produto foi adicionado com sucesso
       setProdutos([...produtos, data.produto]);
       fecharModalAdicionar();
       alert('Produto adicionado com sucesso!');
-    } else {
-      alert('Erro ao adicionar produto: ' );
+      console.log("Resposta do servidor:", data);
+      return data;
+    } catch (error) {
+      // Em caso de erro, exibe a mensagem de erro mais detalhada
+      console.error("Erro:", error);
+      alert(`Erro: ${error.message || 'Erro desconhecido!'}`);
     }
-
-    if (!response.ok) {
-      // Lança um erro com o status da resposta
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    console.log("Resposta do servidor:", data);
-    return data;
-  } catch (error) {
-    console.error("caiu no error teste: " + error);
-    // console.error('Erro ao enviar dados para o servidor:', error);
-    alert('Erro de rede!');
-  }
-};
+  };
+  
 
 
 // Função para excluir um produto

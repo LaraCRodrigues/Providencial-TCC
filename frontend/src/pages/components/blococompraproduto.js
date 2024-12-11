@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom'; // Importar useLocation
 import './cssComponentes/paginacompraproduto.css'; // Certifique-se de ter o arquivo CSS
 
 const ComprarProduto = () => {
+  const location = useLocation(); // Usar useLocation para acessar o estado
+  const { produto } = location.state || {}; // Desestruturar o produto do estado
+
   // Estado para controlar a visibilidade do modal de frete
   const [isModalOpen, setModalOpen] = useState(false);
   
@@ -19,16 +23,16 @@ const ComprarProduto = () => {
         </div>
 
         {/* Imagem principal do produto */}
-        <img id="produto-da-loja" src="Imagens/BD imagens/elastment_transit_mockup.webp" alt="produto-da-loja" />
+        <img id="produto-da-loja" src={produto?.img} alt={produto?.nome} />
 
         {/* Bloco de informações e botões juntos */}
         <div className="container-do-produto">
-          <h3 id="nome-produto"><strong>Nova Aguarrás Mineral Eucatex 900ml</strong></h3>
+          <h3 id="nome-produto"><strong>{produto?.nome}</strong></h3>
           <span className="selo-produto">Compra 100% segura</span>
-          <span id="preco-produto">R$ 34,09</span>
+          <span id="preco-produto">{produto?.preco} <sup>{produto?.precoCentavos}</sup></span>
           <h4><strong>Informações do produto</strong></h4>
-          <h5>Marca <a id="marca-produto" href="#">Eucatex</a></h5>
-          <h5>Modelo <a id="modelo-produto" href="#">Mineral</a></h5>
+          <h5>Marca <a id="marca-produto" href="#">{produto?.marca}</a></h5>
+          <h5>Modelo <a id="modelo-produto" href="#">Modelo Desconhecido</a></h5> {/* Você pode adicionar um campo de modelo no objeto produto */}
           <h4 id="descricao"><strong>Descrição do produto</strong></h4>
           <h6>Embalagem: <br /> Detalhes do produto aqui...</h6>
 

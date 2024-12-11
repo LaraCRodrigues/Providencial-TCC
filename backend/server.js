@@ -1,14 +1,11 @@
 const express = require('express');
 const dotenv = require('dotenv');
-// Carregar variáveis de ambiente
 dotenv.config();
-const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 app.use(cors({ origin: "http://localhost:3000" }));
-// Middleware para parsing de JSON
 app.use(express.json());
 
 // Importação das rotas
@@ -18,6 +15,7 @@ const funcionarioRoutes = require('./routes/FuncionarioRoute');
 const pagamentoRoutes = require('./routes/PagamentoRoute'); 
 const categoriaRoutes = require('./routes/CategoriaRoute'); */
 const produtoRoutes = require('./routes/produtoRoute'); 
+const pagamentoRoutes = require('./routes/pagamentoRoute'); 
 // Definição das rotas
 /*app.use('/api/clientes', clientRoutes);
 app.use('/api/funcionarios', funcionarioRoutes);
@@ -25,6 +23,7 @@ app.use('/api/produtos', produtoRoutes);
 app.use('/api/pagamentos', pagamentoRoutes);
 app.use('/api/categorias', categoriaRoutes);*/
 app.use('/produtos', produtoRoutes);
+app.use('/pagamento', pagamentoRoutes);
 // Middleware de tratamento de erros
 app.use((err, req, res, next) => {
     console.error(err.stack);

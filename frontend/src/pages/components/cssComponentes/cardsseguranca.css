@@ -1,0 +1,49 @@
+
+
+.container-cards-seguranca {
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 30px;
+    display: flex;
+
+}
+
+.container-cards-seguranca img {
+    width: 500px;
+}
+
+.card-seguranca>i {
+    color: white;
+    font-size: 37px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.card-seguranca>h5 {
+    color: white;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+}
+
+.card-seguranca>p {
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-seguranca {
+    border: 2px solid rgb(255, 255, 255);
+    padding: 30px 10px;
+
+    background-color: orange;
+    color: black;
+    border-radius: 30px;
+
+}
+

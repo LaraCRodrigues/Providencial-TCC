@@ -1,0 +1,177 @@
+:root {
+    --cor-palleta-claro-base: #ffdf35 ;
+    --cor--palleta-amarelo-forte: #ffd706;
+    --cor-botoes-conferir:#ff6600;
+    --cor-secundaria: #2ecc71;
+    --cor-texto-elementos: #357EBD;
+    --cor-fundo-site-padrao: #FFFFFF;
+  }
+  
+
+body {
+    background-color: #DFDFDF;
+}
+
+/* interacoes com botao search/pesquisa  */
+/* modificar a barra de pesquisa */
+.buscar-box {
+    align-items: center;
+    width: 35px;
+    height: 50px;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.buscar-box .lupa-buscar,
+.buscar-box .btn-fechar {
+    min-height: 80px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: flex;
+}
+
+.buscar-box .btn-fechar {
+    margin-left: 10px;
+}
+
+.buscar-box .lupa-buscar .bi-search .bi-x-circle {
+    font-size: 25px;
+}
+
+.buscar-box .input-buscar {
+    position: absolute;
+    left: 65px;
+    width: calc(100% -120%);
+    line-height: 80px;
+}
+
+.buscar-box .lupa-buscar {
+    width: 60px;
+    background-color: orange;
+    padding: 10px 10px;
+    color: white;
+}
+
+.buscar-box.ativar {
+    width: 500px;
+    transition: 0.8s;
+
+}
+
+
+
+.buscar-box .btn-fechar {
+    width: 50px;
+
+    line-height: 80px;
+}
+
+.buscar-box .input-buscar .pes {
+    border: 0;
+    outline: 0;
+    font-size: 15px;
+}
+
+
+
+
+
+
+.flex-hrcategorias {
+    display: flex;
+    margin: 10px;
+    gap: 10px;
+    align-items: center;
+
+}
+
+hr {
+    height: 40px;
+}
+
+.flex-links-cat {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.center-links {
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+#section1 {
+
+    top: 1;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}   
+
+/* pesquisa de produtos aba */
+.botao-buscar-produtos {
+    background-color: #357EBD;
+    border: white 1px solid;
+    color: white;
+    align-items: center;
+    text-align: center;
+    padding: 15px 15px 15px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+
+
+}
+
+
+/* Estilo do header */
+
+
+/* 
+.separar-elementos {
+    display: flex;
+        flex-direction: column;
+    }
+  */
+
+    .card>h4 {
+        color: black;
+    }
+    
+    .card>h3 {
+        font-weight: 500;
+        color: black;
+    
+    }
+    
+    .card-flex {
+        display: flex;
+        gap: 30px;
+    }
+    
+.card>img {
+    width: 100px;
+}
+
+    .preco sup {
+    font-size: 14px;
+    vertical-align: top;
+    }
+    /* .separar-elementos {
+    display: flex;
+    flex-direction: column;
+    } */
+   
+    .redes-sociais> a i{
+        color: #FFFFFF;
+    }

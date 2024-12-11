@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --cor-palleta-claro-base: #ffdf35;
+    --cor--palleta-amarelo-forte: #ffd706;
+    --cor-botoes-conferir: #ff6600;
+    --cor-secundaria: #2ecc71;
+    --cor-texto-elementos: #357EBD;
+    --cor-fundo-site-padrao: #FFFFFF;
+}
+html, body {
+    height: 100%; /* Assegura que a altura da página ocupe 100% da janela */
+    margin: 0;
+  }
+  
+/* * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+
+    font-style: normal;
+} */
+
+a {
+    text-decoration: none;
+}
+
+.btn-conf {
+    display: block;
+
+}
+
+.container-tlo {
+    margin: 50px;
+
+}
+
+.bi-search {
+    color: white;
+}
+
+
+/* botao burguer */
+.bi-list {
+    color: #ffff;
+}
+
+
+/* menu hamburguer  MOBILE  */
+
+
+.menu {
+    background-color: black;
+}
+
+.hamburguer {
+    transition: 0.5s ease-in-out;
+}
+
+
+
+/* cards de produtos */
+
+/* cards navegais */
+
+
+.container-card-navegaveis {
+    display: flex;
+    justify-content: center;
+    /* Faz com que os cards "quebrem" em linhas se o espaço for pequeno */
+    gap: 20px;
+    /* Espaço entre os cards */
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Cards básicos */
+.card1-pagina-Materiais,
+.card2-pagina-ferramentas,
+.card3-navegacional {
+    flex: 1 1 300px;
+    /* Os cards ocupam pelo menos 300px e podem se expandir */
+    max-width: 32%;
+    /* Cada card ocupa no máximo 32% do container */
+    background-color: var(--cor-fundo-site-padrao);
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Centralização do conteúdo no card 3 */
+.centralizacao-conteudo-card-navegavel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.centralizacao-conteudo-card-navegavel li {
+    margin-top: 10px;
+}
+
+.centralizacao-conteudo-card-navegavel>ul {
+    margin-top: 5%;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+.titulo-card-navegavel {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ff6600;
+}
+
+/* Estilos para as imagens */
+.card1-pagina-Materiais img,
+.card2-pagina-ferramentas img,
+.card3-navegacional img {
+    width: 100%;
+    /* A imagem ocupa toda a largura do card */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    border-radius: 5px;
+    /* Bordas arredondadas, igual ao card */
+    margin-bottom: 10px;
+    /* Espaço entre a imagem e o restante do conteúdo */
+}
+
+/* Alinhamento do botão nos cards 1 e 2 */
+.alinhamento-botao-cards-navega {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Botão de direcionamento */
+.botao-de-direcionamento {
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* card seguranca end site */
+.centralizacao-conteudo-card-navegavel li a {
+    color: #357EBD;
+}
+
+.container-cards-seguranca {
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 30px;
+    display: flex;
+
+}
+
+.container-cards-seguranca img {
+    width: 500px;
+}
+
+.card-seguranca>i {
+    color: white;
+    font-size: 37px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.card-seguranca>h5 {
+    color: white;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+}
+
+.card-seguranca>p {
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-seguranca {
+    border: 2px solid rgb(255, 255, 255);
+    padding: 30px 10px;
+
+    background-color: orange;
+    color: black;
+    border-radius: 30px;
+
+}

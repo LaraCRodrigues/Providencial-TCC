@@ -1,0 +1,85 @@
+
+/* Atributos da 1 navbar  */
+.container-1navbar {
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  
+}
+.container-1navbar>h4{
+color:white;
+}
+select {
+    border-radius: 5px;
+ font-size: 15px;
+
+}
+
+.container-2navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.container-2navbar img  {
+    width: 170px;
+    max-width: 200px;
+    margin: 0px;
+}
+
+
+/* Estilo do campo de texto da pesquisa */
+.barra-pesquisa-produtos input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 13px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+
+/* Estilo do botão de busca */
+.barra-pesquisa-produtos button.botao-buscar-produtos {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 10px 10px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    align-items: center;
+}
+
+/* barra pesquisa - produtos */
+
+.aba-pesquisa-itens{
+    flex-grow: 1;
+    display: flex;
+
+    justify-content: center;
+    }
+
+    .botao-buscar-produtos {
+        background-color: #357EBD;
+        border: white 1px solid;
+        color: white;
+        align-items: center;
+        text-align: center;
+        padding: 15px 15px 15px 15px;
+        border-radius: 30px;
+        cursor: pointer;
+
+
+    }
+
+    /* Estilo da barra de pesquisa */
+    .barra-pesquisa-produtos {
+        display: flex;
+        align-items: center;
+        width: 500px;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+    
+    }
+

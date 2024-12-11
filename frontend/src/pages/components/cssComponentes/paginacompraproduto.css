@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+  /* padding: 0;
+  margin: 0; */
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+body {
+  background-color: #DFDFDF;
+}
+
+#sessao-exibicao-produto {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+  
+  }
+  #sessao-comentarios{
+    margin-top: 50px;
+  }
+  #sessao-produtos-relacionados{
+    margin-top: 50px;
+  }
+  /* Container principal */
+  #container-produto-da-loja {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 20px;
+  }
+  
+  /* Imagens laterais */
+  #imagens-laterais {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #imagens-laterais img {
+    width: 60px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Imagem principal do produto */
+  #produto-da-loja {
+    width: 400px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  /* Container de detalhes do produto */
+  .container-do-produto {
+    width: 500px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  
+  #nome-produto {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .selo-produto {
+    background-color: #81ca62;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+  
+  #preco-produto {
+    color: #ff914d;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  .container-do-produto h4, .container-do-produto h5, .container-do-produto h6 {
+    margin-top: 10px;
+    color: #555;
+  }
+  
+  a {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  
+  /* Estilo dos botões */
+  .botoes {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  button a {
+    color: #FFFFFF;
+  }
+  #btn-comprar, #btn-frete {
+    background-color: #ff914d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  #btn-sacola {
+    background-color: #ff914d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: transform 0.2s ease;
+  }
+  
+  /*Sessao  comentarios  */
+  .input-container {
+    display: flex;
+    margin: 0px auto;
+    width: 90%; 
+    height: 400px;
+    overflow-x: auto; 
+    border: 1px solid #ccc;
+
+}
+
+.scrollable-input {
+    width:  500%;
+    height: 200%;
+    border: none; 
+    outline: none; 
+    white-space: nowrap;
+}
+/* Barra de rolagem para WebKit (Chrome, Safari) */
+.input-container::-webkit-scrollbar {
+  width: 12px; /* Largura da barra de rolagem */
+}
+
+.input-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px; 
+}
+
+.input-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.input-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Para Firefox */
+.input-container {
+  scrollbar-width: thin; 
+  scrollbar-color: #4a90e2 #f1f1f1; 
+}
+
+.scrollable-input {
+  width: 100%; 
+  border: none; 
+  outline: none; 
+  white-space: nowrap; 
+}
+#sessao-comentarios button{
+color: #FFFFFF;
+background-color: #ff914d;
+border: 1px solid #FFFFFF;
+padding: 10px 15px;
+border-radius: 5px;
+cursor: pointer;
+}
+.posicionamento-botoes{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
+/* janela model parapagamento  */
+/* modal simular calcular frete &  comprar produto */
+
+/* Estilo do Modal */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo do conteúdo do Modal */
+.modal-content {
+  background-color: #fefefe; 
+  margin: 15% auto; 
+  padding: 20px; 
+  border: 1px solid #888; 
+  width: 80%; 
+  max-width: 500px; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo do botão de fechar */
+.close {
+  color: #aaa; 
+  float: right;
+  font-size: 28px; 
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black; 
+  text-decoration: none; 
+  cursor: pointer; 
+}
+
+
+button[type="submit"],
+button[type="button"] {
+  background-color: #4CAF50; 
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; 
+  font-size: 16px;
+  margin-top: 10px; 
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+  background-color: #45a049; /* Cor ao passar o mouse */
+}
+
+/* Estilo do resultado do frete */
+#resultado-frete {
+  margin-top: 15px; /* Margem superior */
+  padding: 10px; /* Espaçamento interno */
+  border: 1px solid #ccc; /* Borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  background-color: #f9f9f9; /* Fundo */
+}
+
+/* botao adicionando na sacola  */
+/* Estilo do botão */
+/* Animação de adicionar à sacola */
+@keyframes addToBag {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* Classe para ativar a animação */
+.animate-bag {
+  animation: addToBag 0.5s ease;
+}

@@ -1,0 +1,140 @@
+/* Estilo para telas mobile */
+@media(max-width: 760px) {
+    #navbar1 {
+        display: none;
+    }
+
+    .center-links,
+    .links-categoria {
+        display: none;
+    }
+
+    .center-links a li:hover {
+        background-color: rgb(214, 161, 214);
+    }
+
+    .menu-h {
+
+        background-color: #357EBD;
+        border-radius: 2px;
+        padding: 10px 10px;
+        transition: 0.5s;
+        align-items: center;
+        cursor: pointer;
+
+
+    }
+    
+.container-propagandas>img {
+    width: 100vw; /* Aumenta para 100% da largura da tela */
+
+}
+.indicadores{
+    display: none;
+}
+    .bi-list {
+        font-size: 30px;
+
+
+    }
+   
+    .container-card {
+        width: 100%; /* Ajusta o tamanho dos produtos em telas menores */
+    }
+    
+    .menu-hamburguer {
+        width: 60%;
+        background-color: bisque;
+    }
+
+    .menu-hamburguer-elements a:hover {
+        color: rgb(214, 161, 214);
+        transition: left cubic-bezier(1, 0, 0, 1) .8s;
+    }
+
+    hr {
+        display: none;
+    }
+
+    .menu-hamburguer-elements {
+        width: 60%;
+    }
+
+
+    /* botao de search pesquisa mobile */
+    .buscar-box {
+        display: block;
+    }
+
+    /* footer informativo - elemento, horario, contato e email */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rodape-informativo {
+        flex-direction: column;
+    }
+
+    .aligm-texto {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .texto-container {
+        margin-bottom: 10px;
+    }
+
+    .container-cards-seguranca {
+
+        display: flex;
+
+        align-items: center;
+        /* Centraliza os cards horizontalmente */
+
+        flex-direction: column;
+        /* Define que os itens dentro da div serão organizados em coluna (verticalmente) */
+
+
+    }
+
+    .container-card-navegaveis {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .card1-pagina-Materiais {
+        width: 300px;
+        align-items: center;
+
+    }
+
+    .card2-pagina-ferramentas {
+        width: 300px;
+        align-items: center;
+    }
+
+    .card2-pagina-ferramentas img {
+        width: 80%;
+    }
+
+    .card1-pagina-Materiais img {
+        width: 80%;
+    }
+
+    .card3-navegacional {
+        width: 200px;
+        align-items: center;
+    }
+
+    .aba-pesquisa-itens {
+        display: none !important;
+      }
+}
+.buscar-box{
+    display: none;
+}
+/* Estilo para telas desktop */
+@media (min-width: 1024px) {
+}

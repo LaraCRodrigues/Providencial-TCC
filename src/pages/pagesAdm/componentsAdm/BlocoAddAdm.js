@@ -56,7 +56,7 @@ const Dashboard = () => {
 
   try {
     console.log("informações do produto: ", JSON.stringify(novoProduto));
-    const response = await fetch('http://localhost:3001/produtos/adicionarProduto', {
+    const response = await fetch('http://localhost:3001/produto/getProduto', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

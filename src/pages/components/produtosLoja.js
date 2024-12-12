@@ -50,7 +50,6 @@ function Produtos() {
       imagem: 'Imagens/BD imagens/tinta_branca.webp',
       link: '/comprar',
     },
-    // Adicione mais produtos conforme necessário
   ];
 
   return (

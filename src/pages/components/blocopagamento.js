@@ -1,5 +1,15 @@
-import React from "react";
+import './cssComponentes/navbarpagamento.css';
+import React, { useState, useEffect } from "react";
+
 const PagamentoBloco = () => {
+  const [produtos, setProdutos] = useState([]);
+
+  useEffect(() => {
+    // Recupera os produtos do localStorage
+    const produtosNoCarrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    setProdutos(produtosNoCarrinho);
+  }, []);
+
   return (
     <section>
       <div className="container-pagamento">
@@ -20,35 +30,41 @@ const PagamentoBloco = () => {
             <h5 id="telefone">(00)-71993998237</h5>
           </div>
         </div>
+      </div>
 
-        {/* Card Informações do Produto */}
+      {/* Card Informações do Produto */}
+      <div className="container-pagamento">
         <div className="card-pagamento2">
-          <div id="produto-adicionado">
-            <input
-              className="imagem-produto-pag"
-              type="image"
-              src="Imagens/produto.jpg"
-              alt="Imagem do Produto"
-            />
-            <div className="informacoes">
-              <div>
-                <h4>Produto</h4>
-                <p id="nome-produto">Cimento</p>
-                <p id="descricao">Descrição breve do produto.</p>
-              </div>
-              <div>
-                <h4>Quantidade</h4>
-                <p id="quantidade">0</p>
-              </div>
-              <div>
-                <h4>Preço</h4>
-                <p id="preco-produto">Preço: R$ 00,00</p>
+          {produtos.map((produto, index) => (
+            <div id="produto-adicionado" key={index}>
+              <input
+                className="imagem-produto-pag"
+                type="image"
+                src={produto.imagem}
+                alt={`Imagem de ${produto.nome}`}
+              />
+              <div className="informacoes">
+                <div>
+                  <h4>Produto</h4>
+                  <p id="nome-produto">{produto.nome}</p>
+                  <p id="descricao">{produto.descricao || "Sem descrição disponível"}</p>
+                </div>
+                <div>
+                  <h4>Quantidade</h4>
+                  <p id="quantidade">{produto.quantidade || 1}</p>
+                </div>
+                <div>
+                  <h4>Preço</h4>
+                  <p id="preco-produto">R$ {produto.preco.toFixed(2)}</p>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
+      </div>
 
-        {/* Card Método de Pagamento e Total */}
+      {/* Card Método de Pagamento e Total */}
+      <div className="container-pagamento">
         <div className="card-pagamento3">
           <div id="produto-adicionado">
             <h4>Método de Pagamento</h4>
@@ -61,7 +77,12 @@ const PagamentoBloco = () => {
           </div>
           <div className="total">
             <h4>Total a pagar</h4>
-            <p id="total-compra">R$ 00,00</p>
+            <p id="total-compra">
+              R${" "}
+              {produtos
+                .reduce((total, produto) => total + produto.preco * (produto.quantidade || 1), 0)
+                .toFixed(2)}
+            </p>
           </div>
           <div>
             <span>

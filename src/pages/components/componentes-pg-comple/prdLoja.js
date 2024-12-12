@@ -10,7 +10,7 @@ const ProdutoCard = ({ produto }) => {
                     <p id="nome-produto-cat-eletrica"><strong>{produto.nome}</strong></p>
                     <span className="preco" id="preco-produto">{produto.preco}<sup>{produto.precoCentavos}</sup></span>
                     <p className="parcelas" id="parcelas-produto">{produto.parcelas}</p>
-                    <button className="btn-conferir"><a href="PgCompraProduto.html">Conferir</a></button>
+                    <button className="btn-conferir"><a href="/comprar">Conferir</a></button>
                 </div>
             </div>
         </div>
@@ -27,7 +27,6 @@ const ProdutosSessao = () => {
             precoCentavos: "50",
             parcelas: "em 2x sem Juros"
         },
-        // Adicione mais objetos de produtos aqui, se necessário
     ];
 
     return (

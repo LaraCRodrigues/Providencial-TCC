@@ -26,7 +26,7 @@ const NavbarPagamento = () => {
             showacessibilidade={showacessibilidade}
             setShowacessibilidade={setShowacessibilidade}
           />
-          <a href="PgPrincipal.html" className="link-sair">
+          <a href="/" className="link-sair">
             <i className="bi bi-box-arrow-left"></i> Sair
           </a>
         </div>

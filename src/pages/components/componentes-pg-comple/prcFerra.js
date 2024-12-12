@@ -11,7 +11,7 @@ const ProdutoCard = ({ produto }) => {
                     <p id="nome-produto-cat-ferramentas"><strong>{produto.nome}</strong></p>
                     <span className="preco" id="preco-produto">{produto.preco}<sup>{produto.precoCentavos}</sup></span>
                     <p className="parcelas" id="parcelas-produto">{produto.parcelas}</p>
-                    <button className="btn-conferir"><a href="PgCompraProduto.html">Conferir</a></button>
+                    <button className="btn-conferir"><a href="/comprar">Conferir</a></button>
                 </div>
             </div>
         </div>
@@ -42,9 +42,8 @@ const Ferramentas = () => {
             marca: "Makita", // Marca do produto
             preco: "R$400", // Preço do produto
             precoCentavos: "00", // Centavos do preço
-            parcelas: "em até 6x sem Juros" // Parcelamento
+            parcelas: "em até 6x sem Juros" 
         },
-        // Adicione mais objetos de produtos de ferramentas conforme necessário
     ];
 
     return (

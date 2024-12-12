@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import '../cssComponentes/carrinho.css';
+
 const Carrinho = ({ showSidebar, toggleSidebar }) => {
   return (
     showSidebar && (
@@ -20,7 +20,7 @@ const Carrinho = ({ showSidebar, toggleSidebar }) => {
           </p>
         </div>
         <button id="finalizarCompra">
-          <Link to="/pagamento">Finalizar Compra</Link>
+          <a href="/pagamento">Finalizar Compra</a>
         </button>
       </div>
     )

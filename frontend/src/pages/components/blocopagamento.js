@@ -1,9 +1,10 @@
-import './cssComponentes/navbarpagamento.css';
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";  // Importa o hook useNavigate
+import './cssComponentes/navbarpagamento.css';
 
 const PagamentoBloco = () => {
   const [produtos, setProdutos] = useState([]);
-
+  const navigate = useNavigate(); // Usando useNavigate para navegação
 
   useEffect(() => {
     // Recupera os produtos do localStorage
@@ -11,6 +12,14 @@ const PagamentoBloco = () => {
     setProdutos(produtosNoCarrinho);
   }, []);
 
+  const calcularTotal = () => {
+    return produtos.reduce((acc, produto) => acc + produto.preco * produto.quantidade, 0).toFixed(2);
+  };
+
+  const handleComprar = () => {
+    // Ao clicar no botão "Comprar", redireciona para a página de pagamento
+    navigate("/processarPagamento", { state: { produtos } }); // Passa os dados dos produtos via state
+  };
 
   return (
     <section>
@@ -19,9 +28,7 @@ const PagamentoBloco = () => {
         <div className="card-pagamento1">
           <div>
             <h3>Endereço da entrega:</h3>
-            <h5 id="endereco-geral-da-entrega">
-              Rua a <span id="divisao">,</span>
-            </h5>
+            <h5 id="endereco-geral-da-entrega"> Rua a <span id="divisao">,</span> </h5>
           </div>
           <div className="alinhamento">
             <h3>Nome do Usuário:</h3>
@@ -33,9 +40,6 @@ const PagamentoBloco = () => {
           </div>
         </div>
 
-
-        <section>
-      <div className="container-pagamento">
         {/* Card Informações do Produto */}
         <div className="card-pagamento2">
           {produtos.map((produto, index) => (
@@ -43,7 +47,7 @@ const PagamentoBloco = () => {
               <input
                 className="imagem-produto-pag"
                 type="image"
-                src={produto.imagem}
+                src={produto.img}
                 alt={`Imagem de ${produto.nome}`}
               />
               <div className="informacoes">
@@ -64,8 +68,7 @@ const PagamentoBloco = () => {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+
         {/* Card Método de Pagamento e Total */}
         <div className="card-pagamento3">
           <div id="produto-adicionado">
@@ -79,7 +82,7 @@ const PagamentoBloco = () => {
           </div>
           <div className="total">
             <h4>Total a pagar</h4>
-            <p id="total-compra">R$ 00,00</p>
+            <p id="total-compra">R$ {calcularTotal()}</p>
           </div>
           <div>
             <span>
@@ -87,7 +90,7 @@ const PagamentoBloco = () => {
             </span>
             <p>R$ 00,00</p>
           </div>
-          <button className="btn-comprar">Comprar</button>
+          <button className="btn-comprar" onClick={handleComprar}>Comprar</button> {/* Chama handleComprar */}
         </div>
       </div>
     </section>

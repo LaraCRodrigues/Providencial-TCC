@@ -14,6 +14,7 @@ function Pgpagamento() {
     <div>
    <NavbarPag/>
     <PagamentoBloco/>
+    
    <FooterSite/>
     </div>
   );

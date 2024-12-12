@@ -1,7 +1,7 @@
-const mercadopago = require('mercadopago');
+import { MercadoPagoConfig } from 'mercadopago';
 
-// Configura as credenciais da sua aplicação
-mercadopago.configure({
-    sandbox: true, // Utilize o ambiente sandbox para testes
-    access_token: 'TEST-5881059652179286-110514-14c1afd36d1c9a03505a256ec32638e8-2080107502'
+const mercadopagoConfig = new MercadoPagoConfig({
+  accessToken: 'TEST-2447061512231866-121206-03d1b602faacbebd25da2ffd3266c4a2-1550039866',
 });
+
+export default mercadopagoConfig;

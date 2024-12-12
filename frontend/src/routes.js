@@ -10,12 +10,15 @@ import PgMateriais from './pages/PaginasComplementares/PgMateriais';
 import PgFerramentas from './pages/PaginasComplementares/PgFerramentas';
 import PgPintura from './pages/PaginasComplementares/PgPintura';
 import Pgpagamento from './pages/PgPagamento';
+import AppPagamento from './pages/AppPagamento';
 
-
+import Carrinho from './pages/components/subcomponents/carrinho';
 // adm
 
 import PgprincAdm from './pages/pagesAdm/PgprincAdm';
 import PgDashAdm from './pages/pagesAdm/PgDashAdm';
+import QrCode from './pages/QrCode';
+
 //const myRef = useRef(null);
 
 const App = () => {
@@ -34,7 +37,10 @@ const App = () => {
                 <Route path="/Materiais" element={<PgMateriais />} />
                 <Route path="/Ferramentas" element={<PgFerramentas />} />
                  <Route path="/Pintura" element={<PgPintura />} /> 
-
+                 <Route path="/QrCode" element={<QrCode />} /> 
+                 <Route path="/processarPagamento" element={<AppPagamento />} />
+                 <Route path="/carrinho" element={<Carrinho />} />
+           
             {/* adm gerenciamento */}
             <Route path="/gerenP" element={<PgprincAdm />} /> 
             <Route path="/gerenDash" element={<PgDashAdm />} /> 

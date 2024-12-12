@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 app.use(cors({ origin: "http://localhost:3000" }));
 app.use(express.json());
-
+app.use(express.static('public'));
 // Importação das rotas
 /*const clientRoutes = require('./routes/ClienteRoute'); 
 const funcionarioRoutes = require('./routes/FuncionarioRoute'); 

@@ -3,7 +3,7 @@ const mercadopago = require('mercadopago');
 
 const router = express.Router();
 
-router.post('/checkout', async (req, res) => {
+/*router.post('/checkout', async (req, res) => {
     // ... outros códigos para calcular o total, obter dados do usuário, etc.
 
 router.post('/checkout', async (req, res) => {
@@ -41,5 +41,7 @@ const preference = {
             res.status(500).send('Erro ao criar preferência');
         });
 });
-});
+});*/
+
+router.post('/criar-pix')
 module.exports = router;

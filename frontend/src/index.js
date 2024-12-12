@@ -8,3 +8,4 @@ root.render(
     <App />
   </React.StrictMode>
 );
+<script src="https://sdk.mercadopago.com/js/v2"></script>

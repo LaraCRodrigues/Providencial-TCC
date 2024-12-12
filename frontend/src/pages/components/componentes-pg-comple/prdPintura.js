@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../componentes-pg-comple/paginaCp.css';
 
-const ProdutoCard = ({ produto }) => {
+const ProdutoCard = ({ produto, onAddToCart }) => {
     return (
         <div className="container-card">
             <div className="card" id="produto1">
@@ -11,7 +11,9 @@ const ProdutoCard = ({ produto }) => {
                     <p id="nome-produto-cat-pintura"><strong>{produto.nome}</strong></p>
                     <span className="preco" id="preco-produto">{produto.preco}<sup>{produto.precoCentavos}</sup></span>
                     <p className="parcelas" id="parcelas-produto">{produto.parcelas}</p>
-                    <button className="btn-conferir"><a href="/comprar">Conferir</a></button>
+                    <button className="btn-conferir" onClick={() => onAddToCart(produto)}>
+                        Adicionar ao Carrinho
+                    </button>
                 </div>
             </div>
         </div>
@@ -22,9 +24,7 @@ const Pintura = () => {
     const [produtos, setProdutos] = useState([]);
     const [error, setError] = useState(null);
 
-
     useEffect(() => {
-        // Fazendo a requisição para o backend
         fetch('http://localhost:3001/produtos/getProduto') // URL completa para o backend
             .then(response => {
                 if (!response.ok) {
@@ -36,6 +36,20 @@ const Pintura = () => {
             .catch(error => setError(error.message));
     }, []);
 
+    const handleAddToCart = (produto) => {
+        // Recupera os produtos do carrinho do localStorage
+        const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        
+        // Adiciona o produto ao carrinho
+        carrinho.push({ ...produto, quantidade: 1 });
+        
+        // Atualiza o carrinho no localStorage
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+        // (Opcional) Mostrar uma mensagem para o usuário ou atualizar o estado
+        alert('Produto adicionado ao carrinho!');
+    };
+
     return (
         <section className="produtos-sessao">
             <div className="container-bloco-title">
@@ -46,10 +60,9 @@ const Pintura = () => {
 
             {error && <div className="error-message">{error}</div>}
 
-
             <div className="produto-container">
                 {produtos.map((produto, index) => (
-                    <ProdutoCard key={index} produto={produto} />
+                    <ProdutoCard key={index} produto={produto} onAddToCart={handleAddToCart} />
                 ))}
             </div>
         </section>

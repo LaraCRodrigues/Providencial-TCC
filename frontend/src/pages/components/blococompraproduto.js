@@ -10,7 +10,18 @@ const ComprarProduto = () => {
 
   // Função para adicionar produtos ao carrinho
   const adicionarAoCarrinho = (produto) => {
-    setCarrinho((prevCarrinho) => [...prevCarrinho, produto]);
+    // Verifica se o preço é um número válido
+    if (isNaN(produto.preco)) {
+      console.error("Preço inválido");
+      return;
+    }
+
+    // Se o preço for válido, adicionar o produto ao carrinho
+    setCarrinho((prevCarrinho) => {
+      const novoCarrinho = [...prevCarrinho, produto];
+      localStorage.setItem('carrinho', JSON.stringify(novoCarrinho)); // Armazenar no localStorage
+      return novoCarrinho;
+    });
     setMostrarCarrinho(true); // Abre o carrinho automaticamente após adicionar
   };
 
@@ -52,6 +63,7 @@ const ComprarProduto = () => {
                   nome: "Nova Aguarrás Mineral Eucatex 900ml",
                   imagem: "Imagens/BD imagens/elastment_transit_mockup.webp",
                   preco: 34.09,
+                  quantidade: 1 // Certifique-se de definir a quantidade
                 })
               }
             >
@@ -95,11 +107,11 @@ const ComprarProduto = () => {
               </span>
             </p>
           </div>
- <button id="finalizarCompra">
-            <a href="/pagamento">            
-Finalizar Compra
+          <button id="finalizarCompra">
+            <a href="/pagamento">
+              Finalizar Compra
             </a>
-            </button>
+          </button>
         </div>
       )}
 

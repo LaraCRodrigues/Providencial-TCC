@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Acessibilidade from "./subcomponents/Acessibilidade"; // Certifique-se de ajustar o caminho do componente
 
+import './cssComponentes/navbarpagamento.css';
 const NavbarPagamento = () => {
   const [showacessibilidade, setShowacessibilidade] = useState(false);
 
@@ -12,7 +13,7 @@ const NavbarPagamento = () => {
     <header>
       <nav id="navbar-pagamento">
         <div className="container-2navbar">
-          <a href="PgPrincipal.html">
+          <a href="/">
             <img
               src="Imagens/Logos Providencial/Providencial logo 2.png"
               alt="logo-da-empresa"
@@ -26,7 +27,7 @@ const NavbarPagamento = () => {
             showacessibilidade={showacessibilidade}
             setShowacessibilidade={setShowacessibilidade}
           />
-          <a href="PgPrincipal.html" className="link-sair">
+          <a href="/" className="link-sair">
             <i className="bi bi-box-arrow-left"></i> Sair
           </a>
         </div>

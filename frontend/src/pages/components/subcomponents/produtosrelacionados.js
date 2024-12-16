@@ -1,93 +1,116 @@
 import React, { useState } from 'react';
-import '../cssComponentes/paginacompraproduto.css'; // Certifique-se de que os estilos estejam configurados corretamente
+import { Link } from 'react-router-dom';
+ // Certifique-se de importar seu CSS para estilização
 
-const ProdutosRelacionados = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const ProdutoCard = ({ imagem, marca, nome, preco, parcelas, link }) => (
+  <div className="card">
+    <img src={imagem} alt={nome} className="produto-img" />
+    <div className="separar-elementos">
+      <h3 className="marca"><a href="#">{marca}</a></h3>
+      <p><strong>{nome}</strong></p>
+      <span className="preco">{preco}</span>
+      <p className="parcelas">{parcelas}</p>
+      <button className="btn-conferir">
+        <Link to={link}>Conferir</Link>
+      </button>
+    </div>
+  </div>
+);
+
+// Função principal do componente
+function ProdutosRelacionados() {
+  const [lojaIndex, setLojaIndex] = useState(0);
+  const [ferramentasIndex, setFerramentasIndex] = useState(0);
+  const [pinturasIndex, setPinturasIndex] = useState(0);
+  const [materiaisIndex, setMateriaisIndex] = useState(0);
+
+  // Funções de controle dos slides
+  const slidePrev = (setIndex, index, length) => {
+    setIndex(index === 0 ? length - 1 : index - 1);
+  };
+
+  const slideNext = (setIndex, index, length) => {
+    setIndex(index === length - 1 ? 0 : index + 1);
+  };
+
   const produtos = [
     {
       id: 1,
-      imagem: 'Imagens/BD imagens/elastment_transit_mockup.webp',
-      marca: 'Elastment',
       nome: 'Cimento Elástico Impermeabilizante Caixa D\'Água 4Kg',
       preco: 'R$200,90',
-      parcelas: 'em 2x sem Juros',
+      marca: 'Elastment',
+      imagem: 'Imagens/BD imagens/elastment_transit_mockup.webp',
+      link: '/comprar',
     },
     {
       id: 2,
-      imagem: 'Imagens/BD imagens/elastment_transit_mockup.webp',
-      marca: 'Elastment',
-      nome: 'Cimento Elástico Impermeabilizante Caixa D\'Água 4Kg',
-      preco: 'R$200,90',
-      parcelas: 'em 2x sem Juros',
+      nome: 'Tinta Branca Premium 18L',
+      preco: 'R$350,00',
+      marca: 'Supertintas',
+      imagem: 'Imagens/BD imagens/tinta_branca.webp',
+      link: '/comprar',
     },
-    {
-      id: 3,
-      imagem: 'Imagens/BD imagens/elastment_transit_mockup.webp',
-      marca: 'Elastment',
-      nome: 'Cimento Elástico Impermeabilizante Caixa D\'Água 4Kg',
-      preco: 'R$200,90',
-      parcelas: 'em 2x sem Juros',
-    },
-    {
-      id: 4,
-      imagem: 'Imagens/BD imagens/elastment_transit_mockup.webp',
-      marca: 'Elastment',
-      nome: 'Cimento Elástico Impermeabilizante Caixa D\'Água 4Kg',
-      preco: 'R$200,90',
-      parcelas: 'em 2x sem Juros',
-    },
+    // Adicione mais produtos conforme necessário
   ];
 
-  // Funções para navegar no carrossel
-  const slidePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? produtos.length - 1 : prevIndex - 1));
-  };
-
-  const slideNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === produtos.length - 1 ? 0 : prevIndex + 1));
-  };
-
   return (
-    <section id="sessao-produtos-relacionados">
+    <section className="produtos-sessao">
       <div className="container-bloco-title">
-        <h2 className="subtitulos-produtos-apresentacao">
-          <i className="bi bi-archive"></i> Produtos Relacionados
-        </h2>
+        <h2 className="subtitulos-produtos-apresentacao"><i className="bi bi-box"></i> Produtos relacionados</h2>
       </div>
-
       <div className="produto-carrossel">
-        <button className="btn-antes-carrosel-produto" onClick={slidePrev}>
-          &#10094;
-        </button>
-        <div className="produto-container" id="loja-carousel">
-          <div className="container-card">
-            {produtos.map((produto, index) => (
-              <div
-                key={produto.id}
-                className={`card ${index === currentIndex ? 'active' : ''}`}
-              >
-                <img src={produto.imagem} alt={`Produto ${produto.id}`} className="produto-img" />
-                <div className="separar-elementos">
-                  <h3 className="marca">
-                    <a href="#">{produto.marca}</a>
-                  </h3>
-                  <p><strong>{produto.nome}</strong></p>
-                  <span className="preco">{produto.preco}</span>
-                  <p className="parcelas">{produto.parcelas}</p>
-                  <button className="btn-conferir">
-                    <a href="PgCompraProduto.html">Conferir</a>
-                  </button>
-                </div>
-              </div>
-            ))}
+        <div className="carrossel-wrapper">
+          <button
+            className="btn-antes-carrosel-produto"
+            onClick={() => slidePrev(setLojaIndex, lojaIndex, produtos.length)}
+          >
+            &#10094;
+          </button>
+          <div className="produto-container">
+            {/* Exibe o produto atual com base no índice */}
+            <ProdutoCard
+              imagem={produtos[lojaIndex].imagem}
+              marca={produtos[lojaIndex].marca}
+              nome={produtos[lojaIndex].nome}
+              preco={produtos[lojaIndex].preco}
+              parcelas="em 2x sem Juros"
+              link={produtos[lojaIndex].link}
+            />
+             <ProdutoCard
+              imagem={produtos[lojaIndex].imagem}
+              marca={produtos[lojaIndex].marca}
+              nome={produtos[lojaIndex].nome}
+              preco={produtos[lojaIndex].preco}
+              parcelas="em 2x sem Juros"
+              link={produtos[lojaIndex].link}
+            />
+             <ProdutoCard
+              imagem={produtos[lojaIndex].imagem}
+              marca={produtos[lojaIndex].marca}
+              nome={produtos[lojaIndex].nome}
+              preco={produtos[lojaIndex].preco}
+              parcelas="em 2x sem Juros"
+              link={produtos[lojaIndex].link}
+            />
+             <ProdutoCard
+              imagem={produtos[lojaIndex].imagem}
+              marca={produtos[lojaIndex].marca}
+              nome={produtos[lojaIndex].nome}
+              preco={produtos[lojaIndex].preco}
+              parcelas="em 2x sem Juros"
+              link={produtos[lojaIndex].link}
+            />
           </div>
+          <button
+            className="btn-proximo-carrosel-produto"
+            onClick={() => slideNext(setLojaIndex, lojaIndex, produtos.length)}
+          >
+            &#10095;
+          </button>
         </div>
-        <button className="btn-proximo-carrosel-produto" onClick={slideNext}>
-          &#10095;
-        </button>
       </div>
     </section>
   );
-};
+}
 
 export default ProdutosRelacionados;

@@ -81,6 +81,7 @@ background-color: var(--cor-fundo-site-padrao);
     align-items: center;
     gap: 15px; 
 }
+
 .imagem-produto-pag{
     width: 100px;
     height: 100px;
@@ -113,11 +114,10 @@ background-color: var(--cor-fundo-site-padrao);
 /* Alinha os elementos verticalmente */
 .frete-info {
     display: flex;
-    flex-direction: column; /* Alinha os itens verticalmente */
+    flex-direction: column; 
     margin: 10px;
 }
 
-/* Estilos opcionais para o ícone e texto */
 .frete-info i {
     font-size: 1.5em;
     color: #007bff;
@@ -129,13 +129,11 @@ background-color: var(--cor-fundo-site-padrao);
 }
 
 
-/* Contêiner para alinhar os botões */
 .container-botoes-pagamento {
     display: flex;
     margin-left: 4%;
 }
 
-/* Estilo para o primeiro botão (exclusão) */
 .container-botoes-pagamento button:first-child {
     background-color: #ff4d4d; /* Vermelho */
     color: white;
@@ -147,7 +145,6 @@ background-color: var(--cor-fundo-site-padrao);
     transition: background-color 0.3s;
 }
 
-/* Estilo para o segundo botão (edição) */
 .container-botoes-pagamento button:last-child {
     background-color: #cc0000; /* Amarelo */
     color: black;
@@ -160,7 +157,6 @@ background-color: var(--cor-fundo-site-padrao);
 }
 
 
-/* bloco 3 metodos de pagamento */
 .card-pagamento3 {
     margin: 10px auto; 
     border-radius: 10px;
@@ -175,7 +171,6 @@ background-color: var(--cor-fundo-site-padrao);
     align-items: flex-start;
     padding: 15px;
 }
-/* Estilos para o seletor de pagamento */
 #metodo-pagamento {
     width: 100%;
     padding: 8px;
@@ -192,11 +187,10 @@ background-color: var(--cor-fundo-site-padrao);
     border-color: #007bff;
     outline: none;
 }
-/* Estilo para o seletor de pagamento */
 #metodo-pagamento {
     width: 100%;
     padding: 8px;
-    margin-top: 8px; /* Espaçamento entre o h4 e o seletor */
+    margin-top: 8px; 
     font-size: 1em;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -210,9 +204,7 @@ background-color: var(--cor-fundo-site-padrao);
     outline: none;
 }   
 
-.total {
-    width: 100%;
-}
+
 
 .total h4 {
     margin-bottom: 5px; /* Espaçamento entre o h4 e o p */
@@ -224,21 +216,6 @@ background-color: var(--cor-fundo-site-padrao);
     font-weight: bold;
 }
 /* Estilo do botão de compra */
-.card-pagamento3 button {
-    width: 10%;
-    padding: 10px;
-    font-size: 1em;
-    color: white;
-    background-color: var(--cor-botoes-conferir);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.card-pagamento3 button:hover {
-    background-color: var(--cor-hover-botao);
-}
 
 /* modal exclusao */
 

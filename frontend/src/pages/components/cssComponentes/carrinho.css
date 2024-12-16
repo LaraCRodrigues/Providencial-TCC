@@ -1,14 +1,11 @@
-
-/* carrinho */
 .sidebar-carrinho {
   position: fixed;
   top: 0;
-  right: -100%; /* Inicialmente fora da tela */
-  width: 300px; /* Ajuste a largura desejada */
+  right: -100%; 
+  width: 300px;
   height: 100%;
-  background-color: white;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-  transition: right 0.3s ease; /* Transição suave ao abrir */
+  transition: right 0.3s ease; 
   z-index: 1000;
 }
   .sidebar-carrinho h2 {
@@ -17,7 +14,7 @@
   }
   
 .sidebar-carrinho.show {
-  right: 0; /* Move para dentro da tela */
+  right: 0;
 }
 
   .sidebar-carrinho ul {
@@ -29,29 +26,78 @@
     margin-bottom: 10px;
   }
   
-  .subtotal {
+  .subtotal ,span {
     margin-top: 20px;
+    font-weight: 700;
+
   }
   
-  #finalizarCompra {
-    display: block;
+.imagem-produto-carrinho {
+  width: 50px; 
+  height: 50px; 
+  object-fit: cover;
+  margin-right: 10px; 
+  border-radius: 5px; 
+}
+.item-carrinho {
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  padding: 10px;
+  border-radius: 5px; 
+}
+
+#itensCarrinho {
+  overflow-y: auto; /* Adiciona barra de rolagem vertical */
+  max-height: calc(100vh - 250px); /* Limita a altura da lista */
+  margin-bottom: 10px; /* Espaço inferior */
+}
+
+.item-carrinho {
+  display: flex; /* Organiza imagem e texto horizontalmente */
+  align-items: center; /* Alinha os itens no centro vertical */
+  gap: 10px; /* Espaçamento entre imagem e detalhes */
+  margin-bottom: 15px; /* Espaçamento entre os produtos */
+}
+#finalizarCompra {
+  background: linear-gradient(45deg, #4caf50, #81c784); 
+  color: #fff; 
+  font-size: 18px; 
+  font-weight: bold; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 10px; 
+  border: none; 
+  border-radius: 25px; 
+  padding: 12px 25px; 
+  cursor: pointer; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: all 0.3s ease-in-out; 
+  margin-left: 20px;
+}
+#finalizarCompra:hover {
+  background: linear-gradient(45deg, #81c784, #4caf50);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05); 
+}
+
+#finalizarCompra i {
+  font-size: 20px; 
+}
+
+#finalizarCompra:active {
+  transform: scale(0.98); 
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); 
+}
+  .btn-fechar-carrinho{
     margin-top: 10px;
-    padding: 10px;
-    width: 100%;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  #fecharCarrinho {
-    display: block;
-    margin-top: 10px;
-    padding: 10px;
-    width: 100%;
+    padding: 5px 5px;
     background-color: #dc3545;
     color: white;
-    border: none;
+    border: 1px solid white;
     cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 20px;
   }
   

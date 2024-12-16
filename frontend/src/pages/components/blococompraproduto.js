@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './cssComponentes/paginacompraproduto.css'; // Certifique-se de ter o arquivo CSS
+import './cssComponentes/paginacompraproduto.css'; 
 
 const ComprarProduto = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -63,7 +63,7 @@ const ComprarProduto = () => {
                   nome: "Nova Aguarrás Mineral Eucatex 900ml",
                   imagem: "Imagens/BD imagens/elastment_transit_mockup.webp",
                   preco: 34.09,
-                  quantidade: 1 // Certifique-se de definir a quantidade
+                  quantidade: 1
                 })
               }
             >

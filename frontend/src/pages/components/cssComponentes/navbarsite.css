@@ -336,7 +336,7 @@ hr {
   margin-top: 20px;
 }
 
-#finalizarCompra {
+/* #finalizarCompra {
   display: block;
   margin-top: 10px;
   padding: 10px;
@@ -345,20 +345,7 @@ hr {
   color: white;
   border: none;
   cursor: pointer;
-}
-
-#fecharCarrinho {
-  display: block;
-  margin-top: 10px;
-  padding: 10px;
-  width: 100%;
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-/* botao acessibilidade */
+} */
 /* Botão de Acessibilidade */
 #btn-acessibilidade {
   background-color: #3498db;
@@ -377,12 +364,11 @@ hr {
   background-color: #2980b9;
 }
 
-/* Balão Flutuante de Acessibilidade */
 .balao-acessibilidade {
   display: none;
   position: absolute;
-  top: 50px; /* Ajuste para alinhar verticalmente ao botão */
-  right: 20px; /* Alinhamento horizontal */
+  top: 50px; 
+  right: 20px; 
   width: 200px;
   padding: 15px;
   background-color: #f4f4f4;
@@ -392,7 +378,6 @@ hr {
   z-index: 100;
 }
 
-/* Cabeçalho do Balão */
 .balao-acessibilidade h4 {
   margin: 0 0 10px 0;
   font-size: 16px;
@@ -413,10 +398,6 @@ hr {
   font-size: 14px;
 }
 
-/* .bloco-links-acessibilidade a:hover {
-  text-decoration: ;
-} */
-
 .fechar-balao {
   position: absolute;
   top: 10px;
@@ -431,11 +412,6 @@ hr {
   color: #de2a2a;
 
 }
-
-.fechar-balao:hover {
-  color: #555;
-}
-
 /* funcinalidades acessibilidade */
 .fonte-grande * {
   font-size: 1.05em;
@@ -443,11 +419,11 @@ hr {
 
 .alto-contraste {
   filter: grayscale(100%);
-  color: #fff;
+  color: #333;
 }
 
 .alto-contraste a {
-  color: #FFFFFF;
+  color: #333;
 }
 
 /* Estilo para Textos em Negrito */

@@ -29,10 +29,9 @@
     background-color: var(--cor--palleta-amarelo-forte);
   }
   #navbar-pagamento h4 {
-    color: #FFFFFF;
     font-weight: 800;
 }
-    #navbar-pagamento a{
+    /* #navbar-pagamento a{
     color: #FFFFFF;
     text-decoration: none;
-}
+} */

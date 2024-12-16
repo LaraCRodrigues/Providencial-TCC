@@ -5,10 +5,8 @@ import '../cssComponentes/carrinho.css';
 const Carrinho = ({ showSidebar, toggleSidebar }) => {
   const navigate = useNavigate();
 
-  // Obtém os produtos do carrinho do localStorage
   const produtos = JSON.parse(localStorage.getItem('carrinho')) || [];
 
-  // Verificar se o carrinho não está vazio e se os dados estão corretos
   if (produtos.length === 0) {
     return <div>O carrinho está vazio.</div>;
   }
@@ -18,13 +16,10 @@ const Carrinho = ({ showSidebar, toggleSidebar }) => {
     navigate("/pagamento");
   };
 
-  // Calcular o subtotal
   const subtotal = produtos.reduce((acc, produto) => {
-    // Certifique-se de que preco e quantidade são números
     const preco = parseFloat(produto.preco);
-    const quantidade = produto.quantidade ? parseInt(produto.quantidade) : 1; // Definir quantidade como 1 se não existir
+    const quantidade = produto.quantidade ? parseInt(produto.quantidade) : 1;
 
-    // Se qualquer valor for NaN, retorna 0 para evitar NaN no subtotal
     if (isNaN(preco) || isNaN(quantidade)) return acc;
 
     return acc + preco * quantidade;
@@ -33,25 +28,33 @@ const Carrinho = ({ showSidebar, toggleSidebar }) => {
   return (
     showSidebar && (
       <div className={`sidebar-carrinho ${showSidebar ? "show" : ""}`} id="carrinhoSidebar">
-        <button id="botaoFecharSidebar" onClick={toggleSidebar} title="Fechar">
+        <button id="botaoFecharSidebar" className="btn-fechar-carrinho" onClick={toggleSidebar} title="Fechar">
           <i className="bi bi-x"></i>
         </button>
         <h2>Carrinho de Compras</h2>
         <ul id="itensCarrinho">
-          {/* Os itens do carrinho serão adicionados aqui dinamicamente */}
           {produtos.map((produto, index) => (
-            <li key={index}>
-              <p>{produto.nome}</p>
-              <p>Quantidade: {produto.quantidade || 1}</p>
-              <p>Preço: R$ {parseFloat(produto.preco).toFixed(2)}</p>
+            <li key={index} className="item-carrinho">
+              
+              <div className="detalhes-produto">
+                <p>{produto.nome}</p>
+                <img
+                src={produto.imagem}
+                alt={`Imagem de ${produto.nome}`}
+                className="imagem-produto-carrinho"
+              />
+                <p>Quantidade: {produto.quantidade || 1}</p>
+                <p>Preço: R$ {parseFloat(produto.preco).toFixed(2)}</p>
+              </div>
             </li>
           ))}
         </ul>
+
         <div className="subtotal">
           <p>Subtotal: <span id="subtotalValor">R$ {subtotal}</span></p>
         </div>
         <button id="finalizarCompra" onClick={handleFinalizarCompra}>
-          Finalizar Compra
+        <i class="bi bi-cart4"></i>   Finalizar Compra
         </button>
       </div>
     )

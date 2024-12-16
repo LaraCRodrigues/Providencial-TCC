@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";  // Importa o hook useNavigate
+import { useNavigate } from "react-router-dom";  
 import './cssComponentes/navbarpagamento.css';
 
 const PagamentoBloco = () => {
   const [produtos, setProdutos] = useState([]);
-  const navigate = useNavigate(); // Usando useNavigate para navegação
+  const navigate = useNavigate(); 
 
   useEffect(() => {
-    // Recupera os produtos do localStorage
     const produtosNoCarrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
     setProdutos(produtosNoCarrinho);
   }, []);
@@ -17,14 +16,12 @@ const PagamentoBloco = () => {
   };
 
   const handleComprar = () => {
-    // Ao clicar no botão "Comprar", redireciona para a página de pagamento
-    navigate("/processarPagamento", { state: { produtos } }); // Passa os dados dos produtos via state
+    navigate("/processarPagamento", { state: { produtos } }); 
   };
 
   return (
     <section>
       <div className="container-pagamento">
-        {/* Card Endereço, Nome e Telefone */}
         <div className="card-pagamento1">
           <div>
             <h3>Endereço da entrega:</h3>
@@ -53,8 +50,8 @@ const PagamentoBloco = () => {
               <div className="informacoes">
                 <div>
                   <h4>Produto</h4>
-                  <p id="nome-produto">{produto.nome}</p>
-                  <p id="descricao">{produto.descricao || "Sem descrição disponível"}</p>
+                  <p id="nome-produto-pagamento">{produto.nome}</p>
+                  <p id="descricao-pagamento">{produto.descricao || "Sem descrição disponível"}</p>
                 </div>
                 <div>
                   <h4>Quantidade</h4>
@@ -62,7 +59,7 @@ const PagamentoBloco = () => {
                 </div>
                 <div>
                   <h4>Preço</h4>
-                  <p id="preco-produto">R$ {produto.preco.toFixed(2)}</p>
+                  <p id="preco-produto-pagamento">R$ {produto.preco.toFixed(2)}</p>
                 </div>
               </div>
             </div>
@@ -71,7 +68,7 @@ const PagamentoBloco = () => {
 
         {/* Card Método de Pagamento e Total */}
         <div className="card-pagamento3">
-          <div id="produto-adicionado">
+          <div id="container-metodos">
             <h4>Método de Pagamento</h4>
             <select id="metodo-pagamento">
               <option value="cartao-credito">Cartão de Crédito</option>
@@ -81,8 +78,8 @@ const PagamentoBloco = () => {
             </select>
           </div>
           <div className="total">
-            <h4>Total a pagar</h4>
-            <p id="total-compra">R$ {calcularTotal()}</p>
+            <span><i class="bi bi-coin"></i> Total a pagar</span>
+            <p id="total-pagamento">R$ {calcularTotal()}</p>
           </div>
           <div>
             <span>
@@ -90,7 +87,7 @@ const PagamentoBloco = () => {
             </span>
             <p>R$ 00,00</p>
           </div>
-          <button className="btn-comprar" onClick={handleComprar}>Comprar</button> {/* Chama handleComprar */}
+          <button className="btn-comprar" onClick={handleComprar}>Comprar</button> 
         </div>
       </div>
     </section>

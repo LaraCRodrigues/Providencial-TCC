@@ -10,6 +10,7 @@ import PgMateriais from './pages/PaginasComplementares/PgMateriais';
 import PgFerramentas from './pages/PaginasComplementares/PgFerramentas';
 import PgPintura from './pages/PaginasComplementares/PgPintura';
 import Pgpagamento from './pages/PgPagamento';
+import Pgpesquisa from './pages/PgPesquisa';
 import AppPagamento from './pages/AppPagamento';
 
 import Carrinho from './pages/components/subcomponents/carrinho';
@@ -40,6 +41,7 @@ const App = () => {
                  <Route path="/QrCode" element={<QrCode />} /> 
                  <Route path="/processarPagamento" element={<AppPagamento />} />
                  <Route path="/carrinho" element={<Carrinho />} />
+                 <Route path="/pesquisa" element={<Pgpesquisa />} />
            
             {/* adm gerenciamento */}
             <Route path="/gerenP" element={<PgprincAdm />} /> 

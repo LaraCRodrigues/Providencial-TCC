@@ -10,9 +10,6 @@ import ChatProvidencial from './components/subcomponents/chatloja';
 import ErrorBoundary from '../pages/components/tratacaoerros/ErrorBoundary '
 // css
 import './components/cssComponentes/MediaQueries.css'
-import './components/Icones/iconesSite.css';
-import './styles/PrincipalPart.css';
-import './styles/Principalstyle.css';
 function PgPrincipal() {
   return (
     <div>

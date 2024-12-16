@@ -6,7 +6,6 @@ import FooterSite from './components/footer';
 
 // css
 import './components/cssComponentes/MediaQueries.css'
-import './components/Icones/iconesSite.css';
 import './styles/Pgpagamento.css';
 
 function Pgpagamento() {
@@ -14,7 +13,6 @@ function Pgpagamento() {
     <div>
    <NavbarPag/>
     <PagamentoBloco/>
-    
    <FooterSite/>
     </div>
   );

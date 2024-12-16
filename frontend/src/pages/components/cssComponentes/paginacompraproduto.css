@@ -48,7 +48,6 @@ body {
     border-radius: 4px;
   }
   
-  /* Imagem principal do produto */
   #produto-da-loja {
     width: 400px;
     height: auto;
@@ -56,7 +55,6 @@ body {
     border-radius: 8px;
   }
   
-  /* Container de detalhes do produto */
   .container-do-produto {
     width: 500px;
     border: 1px solid #ddd;
@@ -90,21 +88,14 @@ body {
     margin-top: 10px;
     color: #555;
   }
-  
-  a {
-    color: #FFFFFF;
-    text-decoration: none;
-  }
-  
-  /* Estilo dos botões */
   .botoes {
     display: flex;
     gap: 20px;
     margin-top: 20px;
   }
-  button a {
+  /* button a {
     color: #FFFFFF;
-  }
+  } */
   #btn-comprar, #btn-frete {
     background-color: #ff914d;
     color: white;

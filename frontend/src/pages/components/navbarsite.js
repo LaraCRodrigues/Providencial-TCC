@@ -4,6 +4,7 @@ import BarraPesquisa from "./subcomponents/barrapesquisa";
 import Carrinho from "./subcomponents/carrinho";
 import Acessibilidade from "./subcomponents/Acessibilidade";
 import Categorias from "./subcomponents/categorias";
+
 import "./cssComponentes/navbarsite.css";
 import "./cssComponentes/barrapesquisa.css";
 import "./cssComponentes/carrinho.css";
@@ -34,10 +35,8 @@ const Navbar = () => {
 
   return (
     <header id="cabecalho">
-      {/* Navbar Principal */}
       <nav id="navbar2">
         <div className="container-2navbar">
-          {/* Logo */}
           <Link to="/">
             <img src="Imagens/Logos Providencial/Providencial logo 2.png" alt="logo" />
           </Link>
@@ -45,8 +44,6 @@ const Navbar = () => {
           <BarraPesquisa />
 
           {/* Botão de Acessibilidade */}
-
-
           <Acessibilidade
             showacessibilidade={showAcessibilidade}
             setShowacessibilidade={setShowAcessibilidade}
